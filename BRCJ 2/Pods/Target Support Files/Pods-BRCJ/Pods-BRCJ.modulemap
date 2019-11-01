@@ -1,0 +1,6 @@
+framework module Pods_BRCJ {
+  umbrella header "Pods-BRCJ-umbrella.h"
+
+  export *
+  module * { export * }
+}
