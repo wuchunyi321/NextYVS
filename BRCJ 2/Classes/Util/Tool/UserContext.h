@@ -37,13 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setUserInfo:(NewUser *)model;
 + (NewUser *)getUserInfo;
 
-/**
- 判断是不是测试账号
- **/
-+ (void)setTest:(BOOL)isTest;
-+ (BOOL )getTest;
-
-
 /** 判断登录状态+ 清空登录状态 **/
 + (BOOL)isLogin;
 + (void)clearLogin;
