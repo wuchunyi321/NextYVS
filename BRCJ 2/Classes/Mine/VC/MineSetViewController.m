@@ -16,7 +16,6 @@
 
 @property (nonatomic,strong)UITableView *tableView;
 
-
 @end
 
 @implementation MineSetViewController

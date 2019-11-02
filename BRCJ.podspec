@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRCJ"
-  spec.version      = "1.1.3"
+  spec.version      = "1.1.4"
   spec.summary      = "A short description of BRCJ."
 
   # This description is used to generate tags and improve search results.
@@ -89,6 +89,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "BRCJ 2/Classes/**/*.{h,m}"
+  spec.exclude_files = "BRCJ 2/Classes/Login/VC/LoginViewController.{h,m}"  
 
  # 设置全局引用 直接在.pch文件中引用
    spec.prefix_header_contents = <<-EOS

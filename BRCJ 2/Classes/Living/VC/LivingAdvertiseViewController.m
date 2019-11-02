@@ -7,7 +7,7 @@
 //
 
 #import "LivingAdvertiseViewController.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 #import "JWPlayer.h"
 
 #define videoUrl (@"https://black-horse-club.oss-cn-hangzhou.aliyuncs.com/xuanchuanshipin/yvs-xcsp.mp4")
@@ -33,8 +33,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = YES;
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    appDelegate.allowRotation = YES;
     self.navigationController.navigationBarHidden = YES;
 }
 

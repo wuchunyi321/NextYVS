@@ -15,7 +15,7 @@
 /*** 视频简介 **/
 #import "SchoolHeaderView.h"
 
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 #import "JWPlayer.h"
 
 #import "SchoolInfoViewController.h"
@@ -90,8 +90,8 @@ SchoolInfoViewControllerDelegate>{
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = YES;
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    appDelegate.allowRotation = YES;
     self.navigationController.navigationBarHidden = YES;
 }
 

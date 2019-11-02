@@ -8,7 +8,7 @@
 
 #import "BRBaseViewController.h"
 
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 
 @interface BRBaseViewController ()
 
@@ -18,8 +18,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = NO;
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    appDelegate.allowRotation = NO;
 }
 
 - (void)viewDidLoad {

@@ -8,7 +8,7 @@
 
 #import "LinvingInfoViewController.h"
 
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 #import "JWPlayer.h"
 #import "CommentCell.h"
 
@@ -157,8 +157,8 @@ JWPlayerDelegate>{
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.allowRotation = YES;
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    appDelegate.allowRotation = YES;
     self.navigationController.navigationBarHidden = YES;
 }
 
