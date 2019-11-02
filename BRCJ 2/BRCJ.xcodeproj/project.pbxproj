@@ -666,7 +666,7 @@
 		849A03EB22EE8389006023B7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				849A03ED22EE941E006023B7 /* VC  */,
+				849A03ED22EE941E006023B7 /* VC */,
 				849A03EC22EE9415006023B7 /* Model */,
 			);
 			path = Login;
@@ -685,13 +685,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		849A03ED22EE941E006023B7 /* VC  */ = {
+		849A03ED22EE941E006023B7 /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				84363A5022EFCF9800E1529B /* LoginViewController.h */,
 				84363A5122EFCF9800E1529B /* LoginViewController.m */,
 			);
-			path = "VC ";
+			path = VC;
 			sourceTree = "<group>";
 		};
 		84BCBB18235A9E8E006C90AF /* JWPlayer */ = {
