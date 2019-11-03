@@ -65,6 +65,7 @@
 		844AE08822F838660053142C /* BRSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844AE08722F838660053142C /* BRSwitchViewController.m */; };
 		8452213823335F0D001FFEE7 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452213723335F0D001FFEE7 /* CommentModel.m */; };
 		8452213B23336E6D001FFEE7 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452213A23336E6D001FFEE7 /* CommentCell.m */; };
+		845DE9B6236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 845DE9B5236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m */; };
 		847F2A352332276D00363281 /* text.html in Resources */ = {isa = PBXBuildFile; fileRef = 847F2A342332276D00363281 /* text.html */; };
 		847F2A3823322E8600363281 /* LivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F2A3723322E8600363281 /* LivingModel.m */; };
 		848717E7230BE34A0082B294 /* BankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848717E6230BE34A0082B294 /* BankCardModel.m */; };
@@ -227,6 +228,8 @@
 		845DE9B1236D7B19001E9EF2 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Classes/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		845DE9B2236D7FA6001E9EF2 /* BrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrHeader.h; sourceTree = "<group>"; };
 		845DE9B3236D7FA6001E9EF2 /* HeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDefine.h; sourceTree = "<group>"; };
+		845DE9B4236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+AddMethod.h"; sourceTree = "<group>"; };
+		845DE9B5236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+AddMethod.m"; sourceTree = "<group>"; };
 		847F2A342332276D00363281 /* text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text.html; sourceTree = "<group>"; };
 		847F2A3623322E8600363281 /* LivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LivingModel.h; sourceTree = "<group>"; };
 		847F2A3723322E8600363281 /* LivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LivingModel.m; sourceTree = "<group>"; };
@@ -745,6 +748,8 @@
 				84BCBB49235AA1C0006C90AF /* NSString+Security.m */,
 				84423D72236311760047B676 /* TransferDataTool.h */,
 				84423D73236311760047B676 /* TransferDataTool.m */,
+				845DE9B4236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.h */,
+				845DE9B5236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m */,
 			);
 			name = Tool;
 			path = Classes/Util/Tool;
@@ -933,6 +938,7 @@
 				844AE07222F7D4170053142C /* BRWebViewController.m in Sources */,
 				841F3ED722F1583100EA7DBA /* SchoolCell.m in Sources */,
 				842DF957233895E500BF9757 /* SchoolHomeViewController.m in Sources */,
+				845DE9B6236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m in Sources */,
 				844AE07E22F7D87E0053142C /* MineInfoViewController.m in Sources */,
 				84363A5222EFCF9800E1529B /* LoginViewController.m in Sources */,
 				84FC5A1A22D8579700345CC9 /* ViewController.m in Sources */,

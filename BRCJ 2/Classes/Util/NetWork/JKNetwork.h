@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
-
+//#import "AFNetworking.h"
+#import "AFHTTPSessionManager+AddMethod.h"
 
 typedef void (^SuccessHandler) (id responseObject);
 typedef void (^FailureHandler)(NSString *errorMessage,id responseObject);
