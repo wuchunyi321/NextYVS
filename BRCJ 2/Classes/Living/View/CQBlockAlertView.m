@@ -7,7 +7,7 @@
 //
 
 #import "CQBlockAlertView.h"
-#import <Masonry.h>
+#import "Masonry.h"
 #import "UIButton+CQBlockSupport.h"
 
 @implementation CQBlockAlertView
