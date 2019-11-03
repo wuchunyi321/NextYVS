@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRCJ"
-  spec.version      = "1.1.8"
+  spec.version      = "1.1.9"
   spec.summary      = "A short description of BRCJ."
 
   # This description is used to generate tags and improve search results.
@@ -98,7 +98,7 @@ Pod::Spec.new do |spec|
 	#import "BrHeader.h"    //HeaderDefine包含了所有头文件
  	#endif 
 	EOS
-
+   spec.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
   # spec.public_header_files = "Classes/**/*.h"
 
 
