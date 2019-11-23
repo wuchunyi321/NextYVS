@@ -194,7 +194,7 @@
     StockModel *item = [self.dataArray objectAtIndex:indexPath.row];
     MyMember *member = [MyMember readFromFile];
     if (item.grade.intValue > member.vipLevel.intValue) {
-        [CQBlockAlertView alertShowWithType:item.grade.integerValue];
+//        [CQBlockAlertView alertShowWithType:item.grade.integerValue price:@""];
     }else{
         if (item.classify.intValue == 1) {
             /** 音视频

@@ -18,7 +18,7 @@
 
 +(instancetype)initNoneDataViewWithFrame:(CGRect)frame type:(NSString *)showStr{
     // TODO: 此处处理与  直接调用frame的不同之处
-    CGFloat height1 =iPhoneX ? 88 : 64;
+//    CGFloat height1 =iPhoneX ? 88 : 64;
     CGFloat Height =frame.size.height;
     JKNoneDataView *view =[[JKNoneDataView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, Height)];
     view.backgroundColor =[UIColor whiteColor];

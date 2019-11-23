@@ -50,6 +50,9 @@ extern NSString * const BRCommentList;
 #pragma mark ------ Upload && userInfoUpdate
 extern NSString * const BRUpload;
 extern NSString * const BRUserRevise;
+#pragma mark --- pay
+extern NSString * const BRPay;
+extern NSString * const BRPayVX;
 
 
 @end

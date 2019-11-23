@@ -357,7 +357,7 @@
         }
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        [CQBlockAlertView alertShowWithType:grade];
+//        [CQBlockAlertView alertShowWithType:grade price:@""];
     }
 }
 

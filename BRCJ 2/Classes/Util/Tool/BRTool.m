@@ -160,5 +160,47 @@
     return backStr;
 }
 
++ (NSString *)getTheGradeStrWith:(NSInteger)grade{
+    NSString *backStr = @"COPPER_CARD_MEMBER";
+    if (grade == 1) {
+        backStr = @"COPPER_CARD_MEMBER";
+    }else if (grade == 2){
+        backStr = @"SILVER_MEMBER";
+    }else if (grade == 3){
+        backStr = @"GOLD_MEMBER";
+    }else if(grade == 4){
+        backStr = @"PLATINUM_MEMBER";
+    }
+    return backStr;
+}
+
++ (NSInteger )getThePriceStrWith:(NSInteger)grade{
+    NSInteger backStr = 0;
+    switch (grade) {
+        case 1:
+        {
+            backStr = COPPER_CARD_MEMBER_PRICE;
+        }
+            break;
+        case 2:
+        {
+            backStr = SILVER_MEMBER_PRICE;
+        }
+            break;
+        case 3:
+        {
+            backStr = GOLD_MEMBER_PRICE;
+        }
+            break;
+        case 4:
+        {
+            backStr = PLATINUM_MEMBER_PRICE;
+        }
+            break;
+        default:
+            break;
+    }
+    return backStr;
+}
 
 @end

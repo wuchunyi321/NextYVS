@@ -14,7 +14,7 @@
 #import "ReportPersonModel.h"
 
 #import "CQBlockAlertView.h"
-
+#import <AlipaySDK/AlipaySDK.h>
 
 
 #define R_BG_WIDTH            375*mulNumber
@@ -301,11 +301,135 @@
     return cell;
 }
 
+- (void)doAPPayWithPrice:(NSString *)price
+{
+//    // 重要说明
+//    // 这里只是为了方便直接向商户展示支付宝的整个支付流程；所以Demo中加签过程直接放在客户端完成；
+//    // 真实App里，privateKey等数据严禁放在客户端，加签过程务必要放在服务端完成；
+//    // 防止商户私密数据泄露，造成不必要的资金损失，及面临各种安全风险；
+//    /*============================================================================*/
+//    /*=======================需要填写商户app申请的===================================*/
+//    /*============================================================================*/
+//    NSString *appID = @"2019111969259533";
+//
+//    // 如下私钥，rsa2PrivateKey 或者 rsaPrivateKey 只需要填入一个
+//    // 如果商户两个都设置了，优先使用 rsa2PrivateKey
+//    // rsa2PrivateKey 可以保证商户交易在更加安全的环境下进行，建议使用 rsa2PrivateKey
+//    // 获取 rsa2PrivateKey，建议使用支付宝提供的公私钥生成工具生成，
+//    // 工具地址：https://doc.open.alipay.com/docs/doc.htm?treeId=291&articleId=106097&docType=1
+//    NSString *rsa2PrivateKey = @"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCPJvF4hU/thgiYSqfNOadxoS1tgDLLNmo+qa5GEE+ILNshXqVe/b7nxqXQ6yPyL7qyMB+Jv8Q1XXbixAtZ9YALSgA7KxVqu2lPQ8Efs++AQRh2FVOJ3kk420TPZHlhpwM4lPxHbqunlfkWgsOWDRra3kKQWluRwIJl7K3wtxV+pDvwZUAtX344Sw0pPokV+hQf5SigDA5wFoqjYxFHg2fXEc9UaK73DvRwKnDigccBfdcUWZ9v8rWSO8NCZ35QT2Rq5kVFtx6ceN6pdf7hvLGJ8lk8PGgm6MnMZzynPJZXAwLOKMEk7yHs0BQx4oeX88FAbWyzwUF+eMv7QX3VnzDxAgMBAAECggEAfa++kYfS/oQRJc1eeVTmjGDsZtkJP9y9+di3N7L4cWKY3zqfTcDSjeOfEMhznh+D9xFDj4k8t3IhgMaKBOkFDGRjwY95VWXI95xQgwpT/TKqTHs7BrCRb4ctaj4YSMH/lP1SZ1FnC1QlCDu1iBhnfMVqgh2jilwQ4Xal3dSR3cbxqdxrPto/0vFa+8P3Lnnq9tXAuYC8e+GGPbieDnzXU4CYUNqjz6iUnWC0KEdvM6iGpf2TX18B/QjSq3/Ivl8TfUT+SsNRolUaNkhIQSkSsrSKOfvznT59P1Ew+Z+GUD+Gf/oKb/u9NnugRhjHsUrKEPMaWXMcKeiNstzDkSbmsQKBgQDx2r1Ftq4F0CW9vsLnGw/Yw5eug6zjFqvpLXckrxVifHiMLZlEGsVrPG43wx+tJkZTu+Q5yAbogK00zfiSMLcgNtjpenRV1NDhCp6QPsWLC0p4dzTCwoLGWAI2jWDUz2tJTFvdU8njSThUBgO5MkO2ReD8T0XJOm4suXjQEygEXQKBgQCXhlg1EbLeZ13KZi94c4E07/LO7Oqp08OXp2iQYEU+AGL59YY94lu/uq92BUYZ7nksrTu6PrtOKkIwz5CK2YmDn0+el6ZVWQB3MA8nTcP97yb0hDUF8YwLuw09QZBD/kHVVVNixgkZdArld/T427Da/1Sck9lJoHdgD75xss/VpQKBgQDB0EATaNTGVcqY5xE7sKUfWYbpVB4tEZMMVuH+pMwnU4YrF7OWLzn7uL6+swBkeqKrIYxAfbqDgfLLuS+0v5NRHoLvf7FQwy3s2dy9zX/y8EZqiWTfmo7AMfD8FIn/oITihW2szSOhn6CjPPqo4839eLxWlZRgMRHvh2Z4oJFWBQKBgG62/RCZxAZ5pLBVBe6PByO1B8dmmPhKASp4ahDEJxPsmGVnnxTspnlrYPVtWRFtjCC222N0nsu4WPDtWQH7fV0tNLH+wMyv4YU1Gn1vdvu+mMolJ9EV82xG2p+dnlnwGA5W8DzF0rREdAnDIr4LWChMVHisFyKTG2aXWmIdc3r5AoGAGzPYWUVTMKl8EqgyHtKpv02G6Y41HKz7gM6xqTM0nQ/zHBdo9kV7Hga+OFTywWguvHiN7EupP0xVac+ni84OKlfsFCZdYX/EgjUh/029m1caxCKpSQhSiICKBRpncd3zLz+nucL4OVQ95zWMbdWvDW5Kp/wDYJ+DfutSH1HJ6dE=";
+//    NSString *rsaPrivateKey = @"";
+//    /*============================================================================*/
+//    /*============================================================================*/
+//    /*============================================================================*/
+//
+//    //partner和seller获取失败,提示
+//    if ([appID length] == 0 ||
+//        ([rsa2PrivateKey length] == 0 && [rsaPrivateKey length] == 0))
+//    {
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示"
+//                                                                       message:@"缺少appId或者私钥,请检查参数设置"
+//                                                                preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *action = [UIAlertAction actionWithTitle:@"知道了"
+//                                                         style:UIAlertActionStyleDefault
+//                                                       handler:^(UIAlertAction *action){
+//
+//                                                       }];
+//        [alert addAction:action];
+//        [self presentViewController:alert animated:YES completion:^{ }];
+//        return;
+//    }
+//
+//    /*
+//     *生成订单信息及签名
+//     */
+//    //将商品信息赋予AlixPayOrder的成员变量
+//    APOrderInfo* order = [APOrderInfo new];
+//
+//    // NOTE: app_id设置
+//    order.app_id = appID;
+//
+//    // NOTE: 支付接口名称
+//    order.method = @"alipay.trade.app.pay";
+//
+//    // NOTE: 参数编码格式
+//    order.charset = @"utf-8";
+//
+//    // NOTE: 当前时间点
+//    NSDateFormatter* formatter = [NSDateFormatter new];
+//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    order.timestamp = [formatter stringFromDate:[NSDate date]];
+//
+//    // NOTE: 支付版本
+//    order.version = @"1.0";
+//
+//    // NOTE: sign_type 根据商户设置的私钥来决定
+//    order.sign_type = (rsa2PrivateKey.length > 1)?@"RSA2":@"RSA";
+//
+//    // NOTE: 商品数据
+//    order.biz_content = [APBizContent new];
+//    order.biz_content.body = @"我是测试数据";
+//    order.biz_content.subject = @"1";
+//    order.biz_content.out_trade_no = [self generateTradeNO]; //订单ID（由商家自行制定）
+//    order.biz_content.timeout_express = @"30m"; //超时时间设置
+//    order.biz_content.total_amount = [NSString stringWithFormat:@"%.2f", 0.01]; //商品价格
+//
+//    //将商品信息拼接成字符串
+//    NSString *orderInfo = [order orderInfoEncoded:NO];
+//    NSString *orderInfoEncoded = [order orderInfoEncoded:YES];
+//    NSLog(@"orderSpec = %@",orderInfo);
+//
+//    // NOTE: 获取私钥并将商户信息签名，外部商户的加签过程请务必放在服务端，防止公私钥数据泄露；
+//    //       需要遵循RSA签名规范，并将签名字符串base64编码和UrlEncode
+//    NSString *signedString = nil;
+//    APRSASigner* signer = [[APRSASigner alloc] initWithPrivateKey:((rsa2PrivateKey.length > 1)?rsa2PrivateKey:rsaPrivateKey)];
+//    if ((rsa2PrivateKey.length > 1)) {
+//        signedString = [signer signString:orderInfo withRSA2:YES];
+//    } else {
+//        signedString = [signer signString:orderInfo withRSA2:NO];
+//    }
+    
+    // NOTE: 如果加签成功，则继续执行支付
+//    if (signedString != nil) {
+        //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+        NSString *appScheme = @"BRCJ";
+        
+        // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
+//        NSString *orderString = [NSString stringWithFormat:@"%@&sign=%@",
+//                                 orderInfoEncoded, signedString];
+        
+        // NOTE: 调用支付结果开始支付
+        [[AlipaySDK defaultService] payOrder:price fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            NSLog(@"reslut = %@",resultDic);
+        }];
+//    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ReportListModel *item = [self.dataArray objectAtIndex:indexPath.row];
     MyMember *member = [MyMember readFromFile];
-    if (item.grade.intValue > member.vipLevel.intValue) { 
-        [CQBlockAlertView alertShowWithType:item.grade.integerValue];
+    UserInfoModel *user = [UserInfoModel readFromFile];
+    if (item.grade.intValue > member.vipLevel.intValue) {
+        
+        [JKRequest requestPayWithVXRechargeLevel:[BRTool getTheGradeStrWith:item.grade.intValue]
+                                        userId:member.userId
+                                         grade:member.vipLevel
+                                        mobile:user.mobile
+                                       success:^(id responseObject) {
+            
+            
+            
+//            NSString *data = responseObject[@"data"];
+//            [self doAPPayWithPrice:data];
+        }
+                                       failure:^(NSString *errorMessage, id responseObject) {
+
+        }];
+        
+        
+        
+        
+//        [CQBlockAlertView alertShowWithType:item.grade.integerValue price:@""];
     }else{
         NewsDetailViewController *reportVC = [[NewsDetailViewController alloc] init];
         reportVC.title = @"研报";

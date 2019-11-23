@@ -173,6 +173,22 @@
                                success:(SuccessHandler)success
                                failure:(FailureHandler)failure;
 
+//Pay
++(void)requestPayWithRechargeLevel:(NSString *)rechargeLevel
+                            userId:(NSString *)userId
+                             grade:(NSString *)grade
+                            mobile:(NSString *)mobile
+                            success:(SuccessHandler)success
+                            failure:(FailureHandler)failure;
+
+//Pay
++(void)requestPayWithVXRechargeLevel:(NSString *)rechargeLevel
+                            userId:(NSString *)userId
+                             grade:(NSString *)grade
+                            mobile:(NSString *)mobile
+                            success:(SuccessHandler)success
+                            failure:(FailureHandler)failure;
+
 //#pragma mark - reform Module --------------------
 //// 新闻
 //+ (void)requestNewsWithType:(NSString *)type

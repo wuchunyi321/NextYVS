@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRCJ"
-  spec.version      = "1.1.9"
+  spec.version      = "1.2.0"
   spec.summary      = "A short description of BRCJ."
 
   # This description is used to generate tags and improve search results.

@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AlipaySDK-iOS (15.6.8)
   - JCore (2.1.1)
   - JPush (3.2.1):
     - JCore (< 3.0.0, >= 2.0.0)
@@ -26,8 +27,6 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - SVProgressHUD (2.2.5)
-  - UMCCommon (2.0.1)
-  - UMCSecurityPlugins (1.0.6)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -35,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - AlipaySDK-iOS
   - JPush
   - Masonry (~> 1.1.0)
   - MJExtension (~> 3.0.17)
@@ -42,8 +42,6 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.80)
   - SDWebImage (~> 5.0.0)
   - SVProgressHUD (~> 2.2.5)
-  - UMCCommon
-  - UMCSecurityPlugins
   - YYImage
   - YYText
 
@@ -58,14 +56,14 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
-    - UMCCommon
-    - UMCSecurityPlugins
   trunk:
+    - AlipaySDK-iOS
     - YYImage
     - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AlipaySDK-iOS: 703a55774a37f412410ab04af96c011b91ec58cb
   JCore: 4072327557f0b83cc22dd4041f2f839740c0077b
   JPush: a1ff8b8ec53fa3419b414946e4db4efa313baeae
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -74,11 +72,9 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
-  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 0fd288582830cfdbc81a24def6a37feda0c28db2
+PODFILE CHECKSUM: f9ce13bb44e900ae8ede4406bb24e1fb5c05e688
 
 COCOAPODS: 1.8.4

@@ -18,6 +18,8 @@
 /**
  不带回调的弹窗
  */
-+(void)alertShowWithType:(NSInteger)grade;
++(void)alertShowWithType:(NSInteger)grade
+             VXBackBlock:(void (^)(void))vxBlock
+            ZFBBackBlock:(void (^)(void))zfbBlock;
 
 @end

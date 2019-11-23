@@ -11,7 +11,6 @@
 @interface UIDevice (JWDevice)
 /**
  *  强制旋转设备
- *  @param  旋转方向
  */
 + (void)setOrientation:(UIInterfaceOrientation)orientation;
 + (BOOL)isOrientationLandscape;

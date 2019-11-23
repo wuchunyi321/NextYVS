@@ -10,6 +10,8 @@
 #import "Masonry.h"
 #import "UIButton+CQBlockSupport.h"
 
+
+
 @implementation CQBlockAlertView
 
 
@@ -18,7 +20,6 @@
 + (void)alertWithButtonClickedBlock:(void (^)(void))buttonClickedBlock {
     // 大背景
     UIView *bgView = [[UIView alloc] init];
-//    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     [[UIApplication sharedApplication].keyWindow addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -108,14 +109,11 @@
     }];
 }
 
-/**
- 不带回调的弹窗
- */
-
-+(void)alertShowWithType:(NSInteger)grade{
++(void)alertShowWithType:(NSInteger)grade
+             VXBackBlock:(void (^)(void))vxBlock
+            ZFBBackBlock:(void (^)(void))zfbBlock{
     // 大背景
     UIView *bgView = [[UIView alloc] init];
-//    [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     [[UIApplication sharedApplication].keyWindow addSubview:bgView];
     bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -207,7 +205,7 @@
     }];
     
     //subContent
-    NSString *subContent = [NSString stringWithFormat:@"加入%@厅俱乐部，享受以下权益，更多权益升级后了解。",[BRTool getTheBackStrWithgrade:grade]];
+    NSString *subContent = [NSString stringWithFormat:@"加入%@厅俱乐部，享受更多权益，更多权益升级后了解。",[BRTool getTheBackStrWithgrade:grade]];
     
     UILabel *subContentLabel = [UILabel new];
     subContentLabel.text = subContent;
@@ -226,7 +224,7 @@
     
     //content1
     UILabel *content1Label = [UILabel new];
-    content1Label.text = @"升级请联系我们的客服人员";
+    content1Label.text = [NSString stringWithFormat:@"升级为%@俱乐部会员",[BRTool getTheBackStrWithgrade:grade]];
     content1Label.textColor = RGBCOLOR(34, 34, 34);
     content1Label.textAlignment = NSTextAlignmentLeft;
     content1Label.font = [UserContext getTheFontWithName:@"PingFang-SC-Medium" size:15];
@@ -241,12 +239,11 @@
     
     //content1
     UILabel *content2Label = [UILabel new];
-    content2Label.text = @"唯一VX ：aa918918www";
+    content2Label.text = [NSString stringWithFormat:@"您需要支付 %ld 元",(long)([BRTool getThePriceStrWith:grade]-[BRTool getThePriceStrWith:member.vipLevel.intValue])];
     content2Label.textColor = RGBCOLOR(34, 34, 34);
     content2Label.textAlignment = NSTextAlignmentLeft;
     content2Label.font = [UserContext getTheFontWithName:@"PingFang-SC-Medium" size:15];
     [bgImageView addSubview:content2Label];
-    
     [content2Label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(bgImageView);
         make.height.mas_equalTo(18);
@@ -254,39 +251,28 @@
         make.top.equalTo(content1Label.mas_bottom).offset(3);
     }];
     
-    //content1
-    UILabel *content3Label = [UILabel new];
-    content3Label.text = @"余生VX ：1464510875";
-    content3Label.textColor = RGBCOLOR(34, 34, 34);
-    content3Label.textAlignment = NSTextAlignmentLeft;
-    content3Label.font = [UserContext getTheFontWithName:@"PingFang-SC-Medium" size:15];
-    [bgImageView addSubview:content3Label];
-    
-    [content3Label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(bgImageView);
-        make.height.mas_equalTo(18);
-        make.left.equalTo(bgImageView).offset(20);
-        make.top.equalTo(content2Label.mas_bottom).offset(3);
-    }];
-    
-    
     //underImage1
-    UIImageView *signImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"base_sign"]];
+    UIButton *signImage = [UIButton buttonWithType:UIButtonTypeCustom];
+    [signImage setImage:[UIImage imageNamed:@"pay_vx"] forState:UIControlStateNormal];
     [bgImageView addSubview:signImage];
-    
+
     [signImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(50);
         make.top.equalTo(content2Label.mas_bottom).offset(20);
         make.right.equalTo(bgImageView.mas_centerX).offset(-32);
     }];
+    [signImage cq_addAction:^(UIButton *button) {
+        vxBlock();
+        [bgView removeFromSuperview];
+    } forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *signLabel = [UILabel new];
-    signLabel.text = @"专属标识";
+    signLabel.text = @"微信支付";
     signLabel.textColor = RGBCOLOR(34, 34, 34);
     signLabel.textAlignment = NSTextAlignmentCenter;
     signLabel.font = [UserContext getTheFontWithName:@"PingFang-SC-Regular" size:14];
     [bgImageView addSubview:signLabel];
-    
+
     [signLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(80);
         make.top.equalTo(signImage.mas_bottom).offset(10);
@@ -295,22 +281,28 @@
     }];
     
     //underImage2
-    UIImageView *classifyImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"base_classify"]];
+    UIButton *classifyImage = [UIButton buttonWithType:UIButtonTypeCustom];
+    [classifyImage setImage:[UIImage imageNamed:@"pay_zfb"] forState:UIControlStateNormal];
     [bgImageView addSubview:classifyImage];
-    
+
     [classifyImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(50);
         make.top.equalTo(content2Label.mas_bottom).offset(20);
         make.left.equalTo(bgImageView.mas_centerX).offset(32);
     }];
+
+    [classifyImage cq_addAction:^(UIButton *button) {
+        zfbBlock();
+        [bgView removeFromSuperview];
+    } forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *classifyLabel = [UILabel new];
-    classifyLabel.text = @"专享分类";
+    classifyLabel.text = @"支付宝支付";
     classifyLabel.textColor = RGBCOLOR(34, 34, 34);
     classifyLabel.textAlignment = NSTextAlignmentCenter;
     classifyLabel.font = [UserContext getTheFontWithName:@"PingFang-SC-Regular" size:14];
     [bgImageView addSubview:classifyLabel];
-    
+
     [classifyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(80);
         make.top.equalTo(classifyImage.mas_bottom).offset(10);

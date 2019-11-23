@@ -137,6 +137,7 @@ NSString *const BRNetworkNoneNetTip = @"您的网络不给力，请稍候再试"
                 progress:^(NSProgress * _Nonnull uploadProgress) {
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSDictionary *dic = responseObject;
+            NSLog(@"adict == %@",dic);
             if (dic && [dic isKindOfClass:[NSDictionary class]]) {
                 NSNumber *code =dic[@"code"];
                 if (code.integerValue == 10000) // 请求成功

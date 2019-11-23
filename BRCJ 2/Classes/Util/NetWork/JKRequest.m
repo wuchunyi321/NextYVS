@@ -677,6 +677,66 @@
         failure(errorMessage,nil);
     }];
 }
+
+//Pay
++(void)requestPayWithRechargeLevel:(NSString *)rechargeLevel
+                            userId:(NSString *)userId
+                             grade:(NSString *)grade
+                            mobile:(NSString *)mobile
+                            success:(SuccessHandler)success
+                           failure:(FailureHandler)failure{
+    JKNetwork *network =[JKNetwork new];
+    
+    NSMutableDictionary *params =[NSMutableDictionary new];
+    [params setObject:rechargeLevel forKey:@"rechargeLevel"];
+    [params setObject:userId forKey:@"userId"];
+    [params setObject:grade forKey:@"grade"];
+    [params setObject:mobile forKey:@"mobile"];
+    
+    [network request:BRPay
+         requestType:JKRequestTypePOST
+          parameters:params
+         showLoading:YES
+             success:^(id responseObject) {
+        
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+            success(responseObject);
+        }
+    } failure:^(NSString *errorMessage,id responseObject) {
+        failure(errorMessage,nil);
+    }];
+}
+
+//Pay
++(void)requestPayWithVXRechargeLevel:(NSString *)rechargeLevel
+                            userId:(NSString *)userId
+                             grade:(NSString *)grade
+                            mobile:(NSString *)mobile
+                            success:(SuccessHandler)success
+                             failure:(FailureHandler)failure{
+    JKNetwork *network =[JKNetwork new];
+    
+    NSMutableDictionary *params =[NSMutableDictionary new];
+    [params setObject:rechargeLevel forKey:@"rechargeLevel"];
+    [params setObject:userId forKey:@"userId"];
+    [params setObject:grade forKey:@"grade"];
+    [params setObject:mobile forKey:@"mobile"];
+    
+    [network request:BRPayVX
+         requestType:JKRequestTypePOST
+          parameters:params
+         showLoading:YES
+             success:^(id responseObject) {
+        
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+            success(responseObject);
+        }
+    } failure:^(NSString *errorMessage,id responseObject) {
+        failure(errorMessage,nil);
+    }];
+}
+
+
 #pragma mark - end
 
 @end

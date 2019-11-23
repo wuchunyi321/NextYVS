@@ -15,7 +15,7 @@
 #import "StockModel.h"
 #import "ReportListModel.h"
 
-@interface NewsDetailViewController ()<WKDelegate>
+@interface NewsDetailViewController ()
 
 
 @end
@@ -29,10 +29,7 @@
     NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
     WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
     [userContentController addUserScript:wkUScript];
-    
-    WKDelegateController * delegateController = [[WKDelegateController alloc]init];
-    delegateController.delegate = self;
-    [userContentController addScriptMessageHandler:delegateController name:@"showImage"];
+
     configuration.userContentController = userContentController;
     
     WKPreferences *preferences = [WKPreferences new];

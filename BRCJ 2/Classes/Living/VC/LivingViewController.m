@@ -113,6 +113,29 @@ SDCycleScrollViewDelegate>{
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(self.bannerView.mas_bottom).offset(12);
     }];
+    
+    /*
+     *强制更新
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    [JKRequest requestCheckVersionWithVersion:app_Version
+                                         type:@"IOS"
+                                      success:^(id responseObject) {
+        NSString *backBool = responseObject[@"data"];
+        if (backBool.boolValue) { //YES
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/cn/app/id1485189944?l=zh&ls=1"] options:[NSDictionary dictionary] completionHandler:^(BOOL success) {
+                
+            }];
+        }else{ //NO
+//            JK_HUD_YES(@"当前是最新版本");
+            [self initTheData];
+        }
+    }
+                                      failure:^(NSString *errorMessage, id responseObject) {
+        JK_HUD_NO(errorMessage);
+    }];
+    */
+    
     [self initTheData];
 }
 

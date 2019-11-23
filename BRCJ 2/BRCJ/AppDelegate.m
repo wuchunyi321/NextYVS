@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import "AppDelegate+RootVC.h"
 
+#import "WXApiManager.h"
+
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
 // iOS10 注册 APNs 所需头文件
@@ -22,6 +24,8 @@
 #define jPushAppKey (@"90b638cb3b59d2c76cef1ddb")
 
 #import "UserInfoModel.h"
+
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface AppDelegate ()<JPUSHRegisterDelegate>
 
@@ -68,8 +72,8 @@
     // notice: 2.1.5 版本的 SDK 新增的注册方法，改成可上报 IDFA，如果没有使用 IDFA 直接传 nil
     [JPUSHService setupWithOption:launchOptions
                            appKey:jPushAppKey
-                          channel:@"Publish channel"
-                 apsForProduction:true
+                          channel:@"public"
+                 apsForProduction:false
             advertisingIdentifier:advertisingId];
     
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
@@ -102,6 +106,14 @@
         [self setLoginViewController];
     }
     [self.window makeKeyAndVisible];
+    
+    [WXApi startLogByLevel:WXLogLevelNormal logBlock:^(NSString *log) {
+        NSLog(@"log : %@", log);
+    }];
+    
+    //向微信注册,发起支付必须注册
+    [WXApi registerApp:@"wx80163dd2d39f73b3" enableMTA:YES];
+    
     return YES;
 }
 
@@ -180,17 +192,18 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-
+    NSLog(@"系统接收推送消息 info === %@",userInfo);
   // Required, iOS 7 Support
   [JPUSHService handleRemoteNotification:userInfo];
   completionHandler(UIBackgroundFetchResultNewData);
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-
-  // Required, For systems with less than or equal to iOS 6
-  [JPUSHService handleRemoteNotification:userInfo];
-}
+//- (void)application:(UIApplication *)application
+//    didReceiveRemoteNotification:(NSDictionary *)userInfo {
+//
+//  // Required, For systems with less than or equal to iOS 6
+//  [JPUSHService handleRemoteNotification:userInfo];
+//}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -209,5 +222,36 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    if ([url.host isEqualToString:@"safepay"]) {
+        // 支付跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+        }];
+        
+        // 授权跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            // 解析 auth code
+            NSString *result = resultDic[@"result"];
+            NSString *authCode = nil;
+            if (result.length>0) {
+                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
+                for (NSString *subResult in resultArr) {
+                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
+                        authCode = [subResult substringFromIndex:10];
+                        break;
+                    }
+                }
+            }
+            NSLog(@"授权结果 authCode = %@", authCode?:@"");
+        }];
+    }else{
+        return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+    }
+    return YES;
+}
 
 @end

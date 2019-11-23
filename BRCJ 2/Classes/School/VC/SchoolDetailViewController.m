@@ -145,7 +145,7 @@
     SchoolListItem *item = [self.dataArray objectAtIndex:indexPath.row];
     MyMember *member = [MyMember readFromFile];
     if (item.grade.intValue > member.vipLevel.intValue) {
-        [CQBlockAlertView alertShowWithType:item.grade.integerValue];
+//        [CQBlockAlertView alertShowWithType:item.grade.integerValue price:@""];
     }else{
         SchoolItemInfoViewController *itemVC = [[SchoolItemInfoViewController alloc] init];
         itemVC.title = @"详情";
@@ -155,7 +155,6 @@
         [self.navigationController pushViewController:itemVC animated:YES];
     }
 }
-
 
 #pragma mark - noneDataView
 -(JKNoneDataView *)noneDataView{

@@ -30,11 +30,19 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)timeStringFromDataToNow:(NSString *)compareDateInString;
 
 #pragma mark -- 工具
+
+/**
+ 根据等级grade值确定等级Str
+ */
 + (NSString *)getTheBackStrWithgrade:(NSInteger)grade;
-
-
-
-
+/**
+ 充值前，设置参数
+ */
++ (NSString *)getTheGradeStrWith:(NSInteger)grade;
+/**
+ 根据需要充值的等级，判断需要充值多少钱
+ */
++ (NSInteger )getThePriceStrWith:(NSInteger)grade;
 
 @end
 

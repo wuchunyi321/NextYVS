@@ -338,10 +338,15 @@
         JK_HUD_NO(@"请添加银行卡信息");
         return;
     }
+    
+    if (self.postAcount < 500) {
+        JK_HUD_NO(@"单次最少提现额度是500元");
+        return;
+    }
+    
     [JKRequest requestMoneyAdd:self.cardModel.card_id
                     drawAmount:[NSString stringWithFormat:@"%ld",(long)self.postAcount]
                        success:^(id responseObject) {
-                           JK_HUD_YES(@"");
                            [self.navigationController popViewControllerAnimated:YES];
                        }
                        failure:^(NSString *errorMessage,id responseObject) {
