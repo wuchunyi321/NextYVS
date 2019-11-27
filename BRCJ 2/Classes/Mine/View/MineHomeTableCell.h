@@ -17,7 +17,8 @@ typedef NS_ENUM(NSInteger,MineHomeTableCellType) {
     MineHomeTableCellTypeMyFriends,
     MineHomeTableCellTypeCallUs,
     MineHomeTableCellTypeSet,
-    MineHomeTableCellTypeAvatar
+    MineHomeTableCellTypeAvatar,
+    MineHomeTableCellTypePay
 };
 
 @interface MineHomeTableCell : UITableViewCell

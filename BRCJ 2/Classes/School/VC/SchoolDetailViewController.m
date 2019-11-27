@@ -12,6 +12,10 @@
 #import "SchoolItemInfoViewController.h"
 
 #import "CQBlockAlertView.h"
+#import "PayModel.h"
+
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApiRequestHandler.h"
 
 #import "SchoolCell.h"
 #import "SchoolListItem.h"
@@ -141,11 +145,50 @@
     return cell;
 }
 
+- (void)doAPPayWithPrice:(NSString *)price{
+    NSString *appScheme = @"BRCJ";
+    [[AlipaySDK defaultService] payOrder:price fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+        NSLog(@"reslut = %@",resultDic);
+    }];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SchoolListItem *item = [self.dataArray objectAtIndex:indexPath.row];
     MyMember *member = [MyMember readFromFile];
+    UserInfoModel *user = [UserInfoModel readFromFile];
     if (item.grade.intValue > member.vipLevel.intValue) {
-//        [CQBlockAlertView alertShowWithType:item.grade.integerValue price:@""];
+        
+        [CQBlockAlertView alertShowWithType:item.grade.integerValue
+                                VXBackBlock:^{ //微信支付
+                    [JKRequest requestPayWithVXRechargeLevel:[BRTool getTheGradeStrWith:item.grade.intValue]
+                                                    userId:member.userId
+                                                     grade:member.vipLevel
+                                                    mobile:user.mobile
+                                                   success:^(id responseObject) {
+                        NSDictionary *data = responseObject[@"data"];
+                        NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                        [UserContext setOrderNumber:orderNumber];
+                        [WXApiRequestHandler jumpToBizPayWithStr:data];
+                    }
+                                                   failure:^(NSString *errorMessage, id responseObject) {
+                        NSLog(@"订单信息获取失败");
+                    }];
+        }
+                               ZFBBackBlock:^{ //支付宝支付
+                    [JKRequest requestPayWithRechargeLevel:[BRTool getTheGradeStrWith:item.grade.intValue]
+                                                    userId:member.userId
+                                                     grade:member.vipLevel
+                                                    mobile:user.mobile
+                                                   success:^(id responseObject) {
+                        NSString *data = responseObject[@"data"];
+                        NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                        [UserContext setOrderNumber:orderNumber];
+                       [self doAPPayWithPrice:data];
+                    }
+                                                   failure:^(NSString *errorMessage, id responseObject) {
+                        NSLog(@"订单信息获取失败");
+                    }];
+        }];
     }else{
         SchoolItemInfoViewController *itemVC = [[SchoolItemInfoViewController alloc] init];
         itemVC.title = @"详情";

@@ -160,6 +160,26 @@
     return backStr;
 }
 
+/**
+  根据等级gradeStr值确定等级Str
+ */
++ (NSString *)getTheBackStrWithgradeStr:(NSString *)gradeStr isBackInt:(BOOL)backInt{
+    NSString *backStr = backInt?@"1":@"散户俱乐部";
+    if ([gradeStr isEqualToString:@"COPPER_CARD_MEMBER"]) {
+        backStr = backInt?@"1":@"散户俱乐部";
+    }else if ([gradeStr isEqualToString:@"SILVER_MEMBER"]){
+        backStr = backInt?@"2":@"百万俱乐部";
+    }else if ([gradeStr isEqualToString:@"GOLD_MEMBER"]){
+        backStr = backInt?@"3":@"千万俱乐部";
+    }else if([gradeStr isEqualToString:@"PLATINUM_MEMBER"]){
+        backStr = backInt?@"4":@"亿万俱乐部";
+    }else{
+        backStr = @"0";
+    }
+    return backStr;
+}
+
+
 + (NSString *)getTheGradeStrWith:(NSInteger)grade{
     NSString *backStr = @"COPPER_CARD_MEMBER";
     if (grade == 1) {

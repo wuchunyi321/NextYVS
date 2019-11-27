@@ -22,6 +22,10 @@
 #import "MineInfoViewController.h"
 /** 消息列表 **/
 #import "MineMessageViewController.h"
+/**
+ 订单列表
+ */
+#import "MainPayListViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,MineInfoViewControllerDelegate>{
     UIButton *rightBtn;
@@ -64,6 +68,8 @@
     [super viewDidLoad];
     [self hideBackButton];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMyInfo) name:@"com.yunvision.updateLevel" object:nil];
+    
     rightBtn = [[UIButton alloc] init];
     [rightBtn addTarget:self action:@selector(tapNaviRightButton) forControlEvents:UIControlEventTouchUpInside];
     rightBtn.enabled = YES;
@@ -87,7 +93,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 4;
+        return 5;
     }else{
         return 2;
     }
@@ -118,6 +124,8 @@
             type = MineHomeTableCellTypeAboutUs;
         }else if (indexPath.row == 3){
             type = MineHomeTableCellTypeReport;
+        }else if (indexPath.row == 4){
+            type = MineHomeTableCellTypePay;
         }else{
             type = MineHomeTableCellTypeMyFriends;
         }
@@ -174,6 +182,11 @@
             reportVC.title = @"免责声明";
             reportVC.mType = WebTypeDisclaimer;
             [self.navigationController pushViewController:reportVC animated:YES];
+        }else if (indexPath.row == 4){ //订单列表
+            MainPayListViewController *reportVC = [[MainPayListViewController alloc] init];
+            reportVC.hidesBottomBarWhenPushed = YES;
+            reportVC.title = @"订单列表";
+            [self.navigationController pushViewController:reportVC animated:YES];
         }else if (indexPath.row == 1){
             MineFriendsViewController *friendsVC = [[MineFriendsViewController alloc] init];
             friendsVC.title = @"我的好友";
@@ -194,6 +207,10 @@
             [self.navigationController pushViewController:setVC animated:YES];
         }
     }
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*

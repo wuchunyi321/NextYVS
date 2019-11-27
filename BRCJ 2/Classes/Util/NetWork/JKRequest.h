@@ -189,6 +189,18 @@
                             success:(SuccessHandler)success
                             failure:(FailureHandler)failure;
 
+//Pay
++(void)requestPayListPageNumber:(NSString *)pageNumber
+                        PageSize:(NSString *)PageSize
+                        success:(SuccessHandler)success
+                        failure:(FailureHandler)failure;
+
+//Pay
++(void)requestPaySearchOutTradeNo:(NSString *)outTradeNo
+                          success:(SuccessHandler)success
+                          failure:(FailureHandler)failure;
+
+
 //#pragma mark - reform Module --------------------
 //// 新闻
 //+ (void)requestNewsWithType:(NSString *)type

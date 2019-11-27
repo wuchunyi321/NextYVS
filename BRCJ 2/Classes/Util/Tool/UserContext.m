@@ -137,4 +137,17 @@
     [AcountModel removeFile];
 }
 
+/**
+ 保存订单号
+ */
++ (void)setOrderNumber:(NSString *)orderNum{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:orderNum forKey:@"orderNum"];
+    [ud synchronize];
+}
++ (NSString *)getOrderNumber{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *orderNumber = [ud objectForKey:@"orderNum"];
+    return orderNumber;
+}
 @end

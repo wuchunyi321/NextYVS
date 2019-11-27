@@ -51,3 +51,5 @@ NSString * const BRCommentList = @"comment/list";
 #pragma mark --- pay
 NSString * const BRPay = @"order/ali";
 NSString * const BRPayVX = @"order/wx";
+NSString * const BRPayList = @"order/orderList";
+NSString * const BRPaySearch = @"order/orderQuery";

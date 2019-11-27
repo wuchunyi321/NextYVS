@@ -737,6 +737,54 @@
 }
 
 
+//Pay
++(void)requestPayListPageNumber:(NSString *)pageNumber
+                        PageSize:(NSString *)PageSize
+                        success:(SuccessHandler)success
+                        failure:(FailureHandler)failure{
+    JKNetwork *network =[JKNetwork new];
+    
+    NSMutableDictionary *params =[NSMutableDictionary new];
+    [params setObject:pageNumber forKey:@"pageNo"];
+    [params setObject:PageSize forKey:@"pageSize"];
+    
+    [network request:BRPayList
+         requestType:JKRequestTypePOST
+          parameters:params
+         showLoading:YES
+             success:^(id responseObject) {
+        
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+            success(responseObject);
+        }
+    } failure:^(NSString *errorMessage,id responseObject) {
+        failure(errorMessage,nil);
+    }];
+}
+
+//Pay
++(void)requestPaySearchOutTradeNo:(NSString *)outTradeNo
+                          success:(SuccessHandler)success
+                          failure:(FailureHandler)failure{
+    JKNetwork *network =[JKNetwork new];
+    
+    NSMutableDictionary *params =[NSMutableDictionary new];
+    [params setObject:outTradeNo forKey:@"outTradeNo"];
+    
+    [network request:BRPaySearch
+         requestType:JKRequestTypePOST
+          parameters:params
+         showLoading:YES
+             success:^(id responseObject) {
+        
+        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+            success(responseObject);
+        }
+    } failure:^(NSString *errorMessage,id responseObject) {
+        failure(errorMessage,nil);
+    }];
+}
+
 #pragma mark - end
 
 @end

@@ -27,6 +27,8 @@
 
 #import <AlipaySDK/AlipaySDK.h>
 
+#import "PayResultViewController.h"
+
 @interface AppDelegate ()<JPUSHRegisterDelegate>
 
 @end
@@ -225,32 +227,52 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    if ([url.host isEqualToString:@"safepay"]) {
-        // 支付跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-        }];
-        
-        // 授权跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-            // 解析 auth code
-            NSString *result = resultDic[@"result"];
-            NSString *authCode = nil;
-            if (result.length>0) {
-                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
-                for (NSString *subResult in resultArr) {
-                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
-                        authCode = [subResult substringFromIndex:10];
-                        break;
-                    }
-                }
-            }
-            NSLog(@"授权结果 authCode = %@", authCode?:@"");
-        }];
-    }else{
-        return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if ([rootVC isKindOfClass:[UINavigationController class]]) { //在当前页面push进去
+        PayResultViewController *payVC = [[PayResultViewController alloc] init];
+        payVC.title = @"支付结果";
+        [rootVC.navigationController pushViewController:payVC animated:YES];
+    }else if([rootVC isKindOfClass:[UITabBarController class]]){
+        PayResultViewController *payVC = [[PayResultViewController alloc] init];
+        payVC.title = @"支付结果";
+        payVC.hidesBottomBarWhenPushed = YES;
+        [((UITabBarController *)rootVC).selectedViewController pushViewController:payVC animated:YES];
     }
+    
+//    [JKRequest requestPaySearchOutTradeNo:[UserContext getOrderNumber]
+//                                  success:^(id responseObject) {
+//
+//    }
+//                                  failure:^(NSString *errorMessage, id responseObject) {
+//
+//    }];
+    
+//    if ([url.host isEqualToString:@"safepay"]) { //支付宝
+//        // 支付跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//        }];
+//
+//        // 授权跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//            // 解析 auth code
+//            NSString *result = resultDic[@"result"];
+//            NSString *authCode = nil;
+//            if (result.length>0) {
+//                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
+//                for (NSString *subResult in resultArr) {
+//                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
+//                        authCode = [subResult substringFromIndex:10];
+//                        break;
+//                    }
+//                }
+//            }
+//            NSLog(@"授权结果 authCode = %@", authCode?:@"");
+//        }];
+//    }else if([url.absoluteString hasPrefix:@"wx"]){ //微信
+//    }
+    
     return YES;
 }
 

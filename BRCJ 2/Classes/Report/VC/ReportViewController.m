@@ -21,11 +21,7 @@
 #import "PayModel.h"
 
 #import <AlipaySDK/AlipaySDK.h>
-
 #import "WXApiRequestHandler.h"
-//#import "APAuthInfo.h"
-//#import "APOrderInfo.h"
-//#import "APRSASigner.h"
 
 @interface ReportViewController ()<UITableViewDelegate,UITableViewDataSource,CardItemViewDelegate>{
     ReportHeadView  *headerView;
@@ -235,6 +231,8 @@
                                                     mobile:user.mobile
                                                    success:^(id responseObject) {
                         NSDictionary *data = responseObject[@"data"];
+                        NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                        [UserContext setOrderNumber:orderNumber];
                         [WXApiRequestHandler jumpToBizPayWithStr:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {
@@ -248,6 +246,8 @@
                                                     mobile:user.mobile
                                                    success:^(id responseObject) {
                         NSString *data = responseObject[@"data"];
+                        NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                        [UserContext setOrderNumber:orderNumber];
                        [self doAPPayWithPrice:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {

@@ -41,8 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isLogin;
 + (void)clearLogin;
 
-
-
+/**
+ 保存订单号
+ */
++ (void)setOrderNumber:(NSString *)orderNum;
++ (NSString *)getOrderNumber;
 
 @end
 

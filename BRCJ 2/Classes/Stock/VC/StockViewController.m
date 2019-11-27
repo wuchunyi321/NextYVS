@@ -40,7 +40,6 @@
 
 @implementation StockViewController
 
-
 - (StockBlockView *)s_stockView{
     if (!_s_stockView) {
         _s_stockView = [[StockBlockView alloc] init];
@@ -242,7 +241,7 @@
                             });
                       }
                       failure:^(NSString *errorMessage,id responseObject) {
-                          JK_HUD_NO(errorMessage);
+//                          JK_HUD_NO(errorMessage);
                       }];
     
     [JKRequest requestWithStr:BRRongStock_sha
@@ -267,7 +266,7 @@
                         });
                       }
                       failure:^(NSString *errorMessage,id responseObject) {
-                          JK_HUD_NO(errorMessage);
+//                          JK_HUD_NO(errorMessage);
                       }];
     
     [JKRequest requestWithStr:BRRongStock_chu
@@ -292,7 +291,7 @@
                         });
                       }
                       failure:^(NSString *errorMessage,id responseObject) {
-                          JK_HUD_NO(errorMessage);
+//                          JK_HUD_NO(errorMessage);
                       }];
 }
 

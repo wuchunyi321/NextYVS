@@ -74,6 +74,10 @@
 		8452213823335F0D001FFEE7 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452213723335F0D001FFEE7 /* CommentModel.m */; };
 		8452213B23336E6D001FFEE7 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452213A23336E6D001FFEE7 /* CommentCell.m */; };
 		845DE9B6236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 845DE9B5236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m */; };
+		84680850238E12B40031B222 /* PayResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8468084F238E12B40031B222 /* PayResultViewController.m */; };
+		84680854238E16700031B222 /* PayResultNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84680853238E16700031B222 /* PayResultNormalCell.m */; };
+		84680857238E16840031B222 /* PayResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84680856238E16840031B222 /* PayResultCell.m */; };
+		8468085A238E440A0031B222 /* DashedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84680859238E440A0031B222 /* DashedView.m */; };
 		847F2A352332276D00363281 /* text.html in Resources */ = {isa = PBXBuildFile; fileRef = 847F2A342332276D00363281 /* text.html */; };
 		847F2A3823322E8600363281 /* LivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 847F2A3723322E8600363281 /* LivingModel.m */; };
 		848717E7230BE34A0082B294 /* BankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848717E6230BE34A0082B294 /* BankCardModel.m */; };
@@ -92,6 +96,9 @@
 		84B69D41236972600004067B /* MineCardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B69D3B236972600004067B /* MineCardListViewController.m */; };
 		84B69D42236972600004067B /* MineMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B69D3E236972600004067B /* MineMoneyViewController.m */; };
 		84B69D43236972600004067B /* MineCardAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B69D40236972600004067B /* MineCardAddViewController.m */; };
+		84BB219E238CC90100A81DCA /* MainPayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BB219D238CC90100A81DCA /* MainPayListViewController.m */; };
+		84BB21A1238CCE0E00A81DCA /* MinePayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BB21A0238CCE0E00A81DCA /* MinePayCell.m */; };
+		84BB21A4238CD7E400A81DCA /* MinePayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BB21A3238CD7E400A81DCA /* MinePayModel.m */; };
 		84BCBB2B235A9E8F006C90AF /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCBB1A235A9E8E006C90AF /* YYWeakProxy.m */; };
 		84BCBB2C235A9E8F006C90AF /* JWPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BCBB1B235A9E8E006C90AF /* JWPlayer.xib */; };
 		84BCBB35235A9E8F006C90AF /* JWFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCBB28235A9E8F006C90AF /* JWFullViewController.m */; };
@@ -254,6 +261,14 @@
 		845DE9B3236D7FA6001E9EF2 /* HeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDefine.h; sourceTree = "<group>"; };
 		845DE9B4236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+AddMethod.h"; sourceTree = "<group>"; };
 		845DE9B5236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+AddMethod.m"; sourceTree = "<group>"; };
+		8468084E238E12B40031B222 /* PayResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayResultViewController.h; sourceTree = "<group>"; };
+		8468084F238E12B40031B222 /* PayResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayResultViewController.m; sourceTree = "<group>"; };
+		84680852238E16700031B222 /* PayResultNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayResultNormalCell.h; sourceTree = "<group>"; };
+		84680853238E16700031B222 /* PayResultNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayResultNormalCell.m; sourceTree = "<group>"; };
+		84680855238E16840031B222 /* PayResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayResultCell.h; sourceTree = "<group>"; };
+		84680856238E16840031B222 /* PayResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayResultCell.m; sourceTree = "<group>"; };
+		84680858238E440A0031B222 /* DashedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedView.h; sourceTree = "<group>"; };
+		84680859238E440A0031B222 /* DashedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashedView.m; sourceTree = "<group>"; };
 		84717822237569E600FB05F6 /* BRCJRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BRCJRelease.entitlements; sourceTree = "<group>"; };
 		847F2A342332276D00363281 /* text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text.html; sourceTree = "<group>"; };
 		847F2A3623322E8600363281 /* LivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LivingModel.h; sourceTree = "<group>"; };
@@ -290,6 +305,12 @@
 		84B69D3E236972600004067B /* MineMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMoneyViewController.m; sourceTree = "<group>"; };
 		84B69D3F236972600004067B /* MineCardAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCardAddViewController.h; sourceTree = "<group>"; };
 		84B69D40236972600004067B /* MineCardAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCardAddViewController.m; sourceTree = "<group>"; };
+		84BB219C238CC90100A81DCA /* MainPayListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainPayListViewController.h; sourceTree = "<group>"; };
+		84BB219D238CC90100A81DCA /* MainPayListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainPayListViewController.m; sourceTree = "<group>"; };
+		84BB219F238CCE0E00A81DCA /* MinePayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinePayCell.h; sourceTree = "<group>"; };
+		84BB21A0238CCE0E00A81DCA /* MinePayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinePayCell.m; sourceTree = "<group>"; };
+		84BB21A2238CD7E400A81DCA /* MinePayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinePayModel.h; sourceTree = "<group>"; };
+		84BB21A3238CD7E400A81DCA /* MinePayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinePayModel.m; sourceTree = "<group>"; };
 		84BCBB19235A9E8E006C90AF /* JWFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFullViewController.h; sourceTree = "<group>"; };
 		84BCBB1A235A9E8E006C90AF /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		84BCBB1B235A9E8E006C90AF /* JWPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWPlayer.xib; sourceTree = "<group>"; };
@@ -597,6 +618,7 @@
 		842851BB22E054D900F19415 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84680851238E16530031B222 /* View */,
 				84CFAF49236019F300AB0323 /* NoneDataView */,
 				842503322334A0EA002556CB /* UIViewController+LKYAlertView.h */,
 				842503332334A0EA002556CB /* UIViewController+LKYAlertView.m */,
@@ -614,6 +636,8 @@
 				844AE08722F838660053142C /* BRSwitchViewController.m */,
 				848CB4E42306897A00E57687 /* BRNormalBarController.h */,
 				848CB4E52306897A00E57687 /* BRNormalBarController.m */,
+				8468084E238E12B40031B222 /* PayResultViewController.h */,
+				8468084F238E12B40031B222 /* PayResultViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -633,6 +657,8 @@
 				844AE07A22F7D7C60053142C /* MineSetViewController.m */,
 				84AB1D8C233B3B0C005AC531 /* MineMessageViewController.h */,
 				84AB1D8D233B3B0C005AC531 /* MineMessageViewController.m */,
+				84BB219C238CC90100A81DCA /* MainPayListViewController.h */,
+				84BB219D238CC90100A81DCA /* MainPayListViewController.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -654,6 +680,8 @@
 				8427A55D230D13B90050AD06 /* MineFriendsCell.m */,
 				84AB1D8F233B40DE005AC531 /* MineMessageCell.h */,
 				84AB1D90233B40DE005AC531 /* MineMessageCell.m */,
+				84BB219F238CCE0E00A81DCA /* MinePayCell.h */,
+				84BB21A0238CCE0E00A81DCA /* MinePayCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,8 +697,23 @@
 				8427A560230D1FB00050AD06 /* FriendsModel.m */,
 				8447B4CA234DDA0A003D63D2 /* MineMessageModel.h */,
 				8447B4CB234DDA0A003D63D2 /* MineMessageModel.m */,
+				84BB21A2238CD7E400A81DCA /* MinePayModel.h */,
+				84BB21A3238CD7E400A81DCA /* MinePayModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84680851238E16530031B222 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84680852238E16700031B222 /* PayResultNormalCell.h */,
+				84680853238E16700031B222 /* PayResultNormalCell.m */,
+				84680855238E16840031B222 /* PayResultCell.h */,
+				84680856238E16840031B222 /* PayResultCell.m */,
+				84680858238E440A0031B222 /* DashedView.h */,
+				84680859238E440A0031B222 /* DashedView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		849A03E622EE80AE006023B7 /* Living */ = {
@@ -1018,12 +1061,15 @@
 				844AE07222F7D4170053142C /* BRWebViewController.m in Sources */,
 				841F3ED722F1583100EA7DBA /* SchoolCell.m in Sources */,
 				842DF957233895E500BF9757 /* SchoolHomeViewController.m in Sources */,
+				84680854238E16700031B222 /* PayResultNormalCell.m in Sources */,
 				845DE9B6236D962B001E9EF2 /* AFHTTPSessionManager+AddMethod.m in Sources */,
 				844AE07E22F7D87E0053142C /* MineInfoViewController.m in Sources */,
 				84363A5222EFCF9800E1529B /* LoginViewController.m in Sources */,
 				84FC5A1A22D8579700345CC9 /* ViewController.m in Sources */,
 				844AE07822F7D7660053142C /* MineCallUsViewController.m in Sources */,
+				84BB219E238CC90100A81DCA /* MainPayListViewController.m in Sources */,
 				841F3EEC22F1827B00EA7DBA /* LivingViewController.m in Sources */,
+				84680857238E16840031B222 /* PayResultCell.m in Sources */,
 				84CFAF4C236019F300AB0323 /* JKNoneDataView.m in Sources */,
 				8447B4CC234DDA0A003D63D2 /* MineMessageModel.m in Sources */,
 				84BCBB37235A9E8F006C90AF /* JWPlayer.m in Sources */,
@@ -1071,6 +1117,7 @@
 				84D0F0D322F4031200196284 /* ReportNormalCell.m in Sources */,
 				84BCBB2B235A9E8F006C90AF /* YYWeakProxy.m in Sources */,
 				84B69D42236972600004067B /* MineMoneyViewController.m in Sources */,
+				84BB21A4238CD7E400A81DCA /* MinePayModel.m in Sources */,
 				8427A55E230D13B90050AD06 /* MineFriendsCell.m in Sources */,
 				8447B4C9234DB50D003D63D2 /* UIButton+CQBlockSupport.m in Sources */,
 				841F3EDD22F1772B00EA7DBA /* StockViewController.m in Sources */,
@@ -1085,6 +1132,7 @@
 				84363A5B22F0344A00E1529B /* MineHomeTableCell.m in Sources */,
 				841F3EEF22F186DD00EA7DBA /* UserInfoModel.m in Sources */,
 				849A3449235567E30026886B /* BrokersTableViewCell.m in Sources */,
+				84BB21A1238CCE0E00A81DCA /* MinePayCell.m in Sources */,
 				848717EA230BEAA20082B294 /* UserFinanceModel.m in Sources */,
 				841FB05A230A30CD004445F6 /* SchoolHeaderView.m in Sources */,
 				84AB1D91233B40DE005AC531 /* MineMessageCell.m in Sources */,
@@ -1098,12 +1146,14 @@
 				84B69D43236972600004067B /* MineCardAddViewController.m in Sources */,
 				8417EF6D22F2F239001A364F /* ReporterInfoViewController.m in Sources */,
 				8423E55C22F9110500B5E098 /* MineFriendListViewController.m in Sources */,
+				8468085A238E440A0031B222 /* DashedView.m in Sources */,
 				8417EF7022F2F753001A364F /* SchoolItemInfoViewController.m in Sources */,
 				8422917B2387C2C6000DFD94 /* PayVXModel.m in Sources */,
 				842DF95D2338A9F200BF9757 /* SchoolInfoViewController.m in Sources */,
 				84BCBB52235AA1C0006C90AF /* JKModelConvert.m in Sources */,
 				841FC02522E1504700CAF02A /* AppDelegate+RootVC.m in Sources */,
 				844AE07522F7D6E90053142C /* MineFriendsViewController.m in Sources */,
+				84680850238E12B40031B222 /* PayResultViewController.m in Sources */,
 				8423E56A22F94ABB00B5E098 /* MineCardImageView.m in Sources */,
 				8424EA712328E57400D5BF27 /* ReportListModel.m in Sources */,
 				849A03F922EECEE7006023B7 /* BRNavigationController.m in Sources */,
@@ -1253,7 +1303,7 @@
 					"$(PROJECT_DIR)/WeChatSDK1.8.6.1",
 					"$(PROJECT_DIR)/WechtSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1288,7 +1338,7 @@
 					"$(PROJECT_DIR)/WeChatSDK1.8.6.1",
 					"$(PROJECT_DIR)/WechtSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

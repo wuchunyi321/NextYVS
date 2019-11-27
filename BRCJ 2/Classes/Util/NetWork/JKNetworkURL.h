@@ -53,6 +53,7 @@ extern NSString * const BRUserRevise;
 #pragma mark --- pay
 extern NSString * const BRPay;
 extern NSString * const BRPayVX;
-
+extern NSString * const BRPayList;
+extern NSString * const BRPaySearch;
 
 @end

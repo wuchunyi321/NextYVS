@@ -36,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)getTheBackStrWithgrade:(NSInteger)grade;
 /**
+  根据等级gradeStr值确定等级Str
+ */
++ (NSString *)getTheBackStrWithgradeStr:(NSString *)gradeStr isBackInt:(BOOL)backInt;
+/**
  充值前，设置参数
  */
 + (NSString *)getTheGradeStrWith:(NSInteger)grade;
@@ -43,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  根据需要充值的等级，判断需要充值多少钱
  */
 + (NSInteger )getThePriceStrWith:(NSInteger)grade;
+
 
 @end
 

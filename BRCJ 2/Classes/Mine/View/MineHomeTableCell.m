@@ -109,7 +109,7 @@
         }
             break;
         case MineHomeTableCellTypeReport:{
-            self.underLine.hidden = YES;
+            self.underLine.hidden = NO;
             self.iconImage.image = [UIImage imageNamed:@"mine_statement"];
             self.titlelabel.text = @"免责声明";
         }
@@ -130,6 +130,12 @@
             self.underLine.hidden = YES;
             self.iconImage.image = [UIImage imageNamed:@"mine_set"];
             self.titlelabel.text = @"设置";
+        }
+            break;
+        case MineHomeTableCellTypePay:{
+            self.underLine.hidden = YES;
+            self.iconImage.image = [UIImage imageNamed:@"mine_pay"];
+            self.titlelabel.text = @"订单列表";
         }
             break;
         default:
