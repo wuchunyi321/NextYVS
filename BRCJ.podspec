@@ -149,5 +149,6 @@ spec.dependency 'SDCycleScrollView', '~> 1.80'
 spec.dependency 'MJExtension', '~> 3.0.17'
 spec.dependency 'SVProgressHUD', '~> 2.2.5'
 spec.dependency 'AlipaySDK-iOS'
+spec.dependency 'WechatOpenSDK','1.8.2'
 
 end
