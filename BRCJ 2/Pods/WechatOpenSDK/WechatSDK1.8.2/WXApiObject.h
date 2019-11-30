@@ -158,7 +158,6 @@ typedef void(^WXLogBolock)(NSString * log);
 /** 商家根据微信开放平台文档对数据做的签名 */
 @property (nonatomic, retain) NSString *sign;
 
-
 @end
 
 #endif

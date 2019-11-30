@@ -34,8 +34,6 @@
 		842291772387BC47000DFD94 /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 842291722387BC47000DFD94 /* WXApiRequestHandler.m */; };
 		842291782387BC47000DFD94 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842291752387BC47000DFD94 /* WXApiManager.m */; };
 		8422917B2387C2C6000DFD94 /* PayVXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422917A2387C2C6000DFD94 /* PayVXModel.m */; };
-		842291822387C744000DFD94 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8422917F2387C744000DFD94 /* README.txt */; };
-		842291832387C744000DFD94 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842291812387C744000DFD94 /* libWeChatSDK.a */; };
 		842291852387C802000DFD94 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 842291842387C801000DFD94 /* libsqlite3.tbd */; };
 		842368CA235D46D60004140C /* AcountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 842368C9235D46D60004140C /* AcountModel.m */; };
 		842368CD235D4E890004140C /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842368CB235D4E890004140C /* NewsDetailViewController.m */; };
@@ -177,11 +175,6 @@
 		842291752387BC47000DFD94 /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
 		842291792387C2C6000DFD94 /* PayVXModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayVXModel.h; sourceTree = "<group>"; };
 		8422917A2387C2C6000DFD94 /* PayVXModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayVXModel.m; sourceTree = "<group>"; };
-		8422917D2387C744000DFD94 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		8422917E2387C744000DFD94 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		8422917F2387C744000DFD94 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		842291802387C744000DFD94 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		842291812387C744000DFD94 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		842291842387C801000DFD94 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		842368C8235D46D60004140C /* AcountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcountModel.h; sourceTree = "<group>"; };
 		842368C9235D46D60004140C /* AcountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcountModel.m; sourceTree = "<group>"; };
@@ -364,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				842291852387C802000DFD94 /* libsqlite3.tbd in Frameworks */,
-				842291832387C744000DFD94 /* libWeChatSDK.a in Frameworks */,
 				4CC8D59656F702D8E4ACACBA /* Pods_BRCJ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,18 +550,6 @@
 				842291752387BC47000DFD94 /* WXApiManager.m */,
 			);
 			path = Control;
-			sourceTree = "<group>";
-		};
-		8422917C2387C744000DFD94 /* WechtSDK1.8.2 */ = {
-			isa = PBXGroup;
-			children = (
-				8422917D2387C744000DFD94 /* WXApi.h */,
-				8422917E2387C744000DFD94 /* WXApiObject.h */,
-				8422917F2387C744000DFD94 /* README.txt */,
-				842291802387C744000DFD94 /* WechatAuthSDK.h */,
-				842291812387C744000DFD94 /* libWeChatSDK.a */,
-			);
-			path = WechtSDK1.8.2;
 			sourceTree = "<group>";
 		};
 		8423E55D22F912FD00B5E098 /* 个人信息 */ = {
@@ -867,7 +847,6 @@
 		84FC5A0922D8579700345CC9 = {
 			isa = PBXGroup;
 			children = (
-				8422917C2387C744000DFD94 /* WechtSDK1.8.2 */,
 				8422916F2387BC46000DFD94 /* Control */,
 				84BCBB38235AA1C0006C90AF /* NetWork */,
 				84BCBB43235AA1C0006C90AF /* Tool */,
@@ -979,7 +958,6 @@
 			files = (
 				84FC5A1F22D8579900345CC9 /* Assets.xcassets in Resources */,
 				847F2A352332276D00363281 /* text.html in Resources */,
-				842291822387C744000DFD94 /* README.txt in Resources */,
 				84BCBB2C235A9E8F006C90AF /* JWPlayer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,7 +50,7 @@
     [headerView addSubview:logoImage];
     
     UILabel *versionLabel = [UILabel new];
-    versionLabel.text = @"云视界科技1.0.0";
+    versionLabel.text = @"云世界1.2.0";
     versionLabel.textColor = RGBCOLOR(108, 108, 108);
     versionLabel.textAlignment = NSTextAlignmentCenter;
     versionLabel.frame = CGRectMake(0, 30+84+20, SCREEN_WIDTH, 13);

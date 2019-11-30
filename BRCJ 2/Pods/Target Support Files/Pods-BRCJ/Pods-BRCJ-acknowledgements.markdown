@@ -200,6 +200,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## WechatOpenSDK
+
+Copyright 2018 tencent.com. All rights reserved.
+
+
 ## YYImage
 
 The MIT License (MIT)
