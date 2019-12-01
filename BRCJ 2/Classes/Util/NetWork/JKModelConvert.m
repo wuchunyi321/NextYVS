@@ -11,7 +11,6 @@
 
 @implementation JKModelConvert
 
-
 + (id)dataModelWithClass:(Class)modelClass andSource:(id)responseObject
 {
     // 字典

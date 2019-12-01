@@ -19,6 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 }
+
 //未登陆时候
 - (void)setLoginViewController{
     LoginViewController  *login = [[LoginViewController alloc] init];
