@@ -543,11 +543,11 @@
 			isa = PBXGroup;
 			children = (
 				842291702387BC46000DFD94 /* WXApiManager.h */,
-				842291712387BC46000DFD94 /* WXApiResponseHandler.m */,
-				842291722387BC47000DFD94 /* WXApiRequestHandler.m */,
-				842291732387BC47000DFD94 /* WXApiRequestHandler.h */,
-				842291742387BC47000DFD94 /* WXApiResponseHandler.h */,
 				842291752387BC47000DFD94 /* WXApiManager.m */,
+				842291742387BC47000DFD94 /* WXApiResponseHandler.h */,
+				842291712387BC46000DFD94 /* WXApiResponseHandler.m */,
+				842291732387BC47000DFD94 /* WXApiRequestHandler.h */,
+				842291722387BC47000DFD94 /* WXApiRequestHandler.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
