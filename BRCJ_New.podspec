@@ -15,8 +15,8 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "BRCJ"
-  spec.version      = "1.2.2"
+  spec.name         = "BRCJ_New"
+  spec.version      = "1.2.3"
   spec.summary      = "A short description of BRCJ."
 
   # This description is used to generate tags and improve search results.
