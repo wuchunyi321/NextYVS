@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRCJ_New"
-  spec.version      = "1.2.4"
+  spec.version      = "1.2.5"
   spec.summary      = "A short description of BRCJ."
 
   # This description is used to generate tags and improve search results.
@@ -91,11 +91,11 @@ Pod::Spec.new do |spec|
   spec.source_files  = "BRCJ 2/Classes/**/*.{h,m}"
   spec.exclude_files = "BRCJ 2/Classes/Login/VC/LoginViewController.{h,m}" 
 
-  spec.vendored_libraries  = 'BRCJ/Classes/WechatSDK1.8.2/libWeChatSDK.a'
+  spec.vendored_libraries  = 'BRCJ 2/Classes/WechatSDK1.8.2/libWeChatSDK.a'
 
-  spec.vendored_frameworks  = 'BRCJ/Classes/AlipaySDK-iOS/AlipaySDK.framework'
-  spec.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => 'BRCJ/Classes/AlipaySDK-iOS/*.{h}' }
-  spec.resources = ['BRCJ/Classes/AlipaySDK-iOS/AlipaySDK.bundle','BRCJ/Classes/BRSource.bundle']
+  spec.vendored_frameworks  = 'BRCJ 2/Classes/AlipaySDK-iOS/AlipaySDK.framework'
+  spec.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => 'BRCJ 2/Classes/AlipaySDK-iOS/*.{h}' }
+  spec.resources = ['BRCJ 2/Classes/AlipaySDK-iOS/AlipaySDK.bundle','BRCJ 2/Classes/BRSource.bundle']
 
  # 设置全局引用 直接在.pch文件中引用
    spec.prefix_header_contents = <<-EOS

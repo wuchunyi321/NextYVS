@@ -10,7 +10,7 @@
 
 #import "MineInfoNormalCell.h"
 
-#import "AppDelegate+RootVC.h" //切换登录状态
+//#import "AppDelegate+RootVC.h" //切换登录状态
 
 @interface MineSetViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -77,9 +77,10 @@
 
 - (void)handleLoginOut{
     [UserContext clearLogin];
-    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [delegate setLoginViewController];
-    [delegate deleteAlias];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"com.yunvision.logout" object:nil];
+//    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [delegate setLoginViewController];
+//    [delegate deleteAlias];
 }
 
 /*
