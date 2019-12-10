@@ -47,10 +47,10 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
-        self=[[[NSBundle mainBundle] loadNibNamed:@"JWPlayer" owner:self options:nil] firstObject];
+        self=[[[NSBundle mainBundle] loadNibNamed:@"BRSource.bundle/JWPlayer" owner:self options:nil] firstObject];
         self.frame=frame;
         _oldFrame=frame;
-        [self.playProgress setThumbImage:[UIImage imageNamed:@"MoviePlayer_Slider"] forState:UIControlStateNormal];
+        [self.playProgress setThumbImage:[UIImage imageNamed:@"BRSource.bundle/MoviePlayer_Slider"] forState:UIControlStateNormal];
         [self setPortraitLayout];
         self.player = [[AVPlayer alloc] init];
         _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
@@ -218,7 +218,7 @@
     [self landscapeHide];
     self.frame=[UIScreen mainScreen].bounds;
     
-    [self.totateBtn setImage:[UIImage imageNamed:@"MoviePlayer_小屏"] forState:UIControlStateNormal];
+    [self.totateBtn setImage:[UIImage imageNamed:@"BRSource.bundle/MoviePlayer_小屏"] forState:UIControlStateNormal];
     
     if (_delegate && [_delegate respondsToSelector:@selector(playerTransfer:withIsLandscape:)]) {
         [_delegate performSelector:@selector(playerTransfer:withIsLandscape:) withObject:self withObject:[NSNumber numberWithBool:YES]];
@@ -233,7 +233,7 @@
 //    self.topView.hidden = YES;
 //    self.downHeight.constant = 32.0f;
 //    self.speedTopHeight.constant = 50.0f;
-    [self.totateBtn setImage:[UIImage imageNamed:@"MoviePlayer_Full"] forState:UIControlStateNormal];
+    [self.totateBtn setImage:[UIImage imageNamed:@"BRSource.bundle/MoviePlayer_Full"] forState:UIControlStateNormal];
     
     if (_delegate && [_delegate respondsToSelector:@selector(playerTransfer:withIsLandscape:)]) {
         [_delegate performSelector:@selector(playerTransfer:withIsLandscape:) withObject:self withObject:[NSNumber numberWithBool:NO]];
@@ -363,7 +363,7 @@
 - (void)play{
     _isPlaying = YES;
     [_player play];
-    [self.playBtn  setImage:[UIImage imageNamed:@"MoviePlayer_Play"] forState:UIControlStateNormal];
+    [self.playBtn  setImage:[UIImage imageNamed:@"BRSource.bundle/MoviePlayer_Play"] forState:UIControlStateNormal];
     if (!self.link) {
         self.link = [CADisplayLink displayLinkWithTarget:[YYWeakProxy proxyWithTarget:self] selector:@selector(upadte)];//和屏幕频率刷新相同的定时器
         [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -390,7 +390,7 @@
 - (void)pause{
     _isPlaying = NO;
     [_player pause];
-    [self.playBtn  setImage:[UIImage imageNamed:@"MoviePlayer_Stop"] forState:UIControlStateNormal];
+    [self.playBtn  setImage:[UIImage imageNamed:@"BRSource.bundle/MoviePlayer_Stop"] forState:UIControlStateNormal];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -98,7 +98,7 @@
         }];
         
         //video_default
-        UIImageView *vedioIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"video_default"]];
+        UIImageView *vedioIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/video_default"]];
         [self.iconImage addSubview:vedioIcon];
         [vedioIcon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.iconImage);
@@ -130,7 +130,7 @@
         [self.contentView addSubview:self.lookLabel];
         self.lookLabel.frame = CGRectMake(SCREEN_WIDTH-46, 85, 30, 12);
         
-        UIImageView *lookImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pViews"]];
+        UIImageView *lookImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/pViews"]];
         [self.contentView addSubview:lookImage];
         lookImage.frame = CGRectMake(SCREEN_WIDTH-46-2-16, 85, 16, 11);
         
@@ -147,8 +147,8 @@
 }
 
 - (void)loadTheCellWith:(SchoolListItem *)item{
-    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnail] placeholderImage:[UIImage imageNamed:@"default_image"]];
-    NSString *imageName = item.grade.intValue>2?@"report_class_thr":(item.grade.intValue>1?@"report_class_two":@"report_class_one");
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnail] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/default_image"]];
+    NSString *imageName = item.grade.intValue>2?@"BRSource.bundle/report_class_thr":(item.grade.intValue>1?@"BRSource.bundle/report_class_two":@"BRSource.bundle/report_class_one");
     self.levelImage.image = [UIImage imageNamed:imageName];
     if (item.grade.intValue == 0) {
         self.levelImage.hidden = YES;
@@ -161,8 +161,8 @@
 }
 
 - (void)loadTheStockWith:(StockModel *)item{
-    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnail] placeholderImage:[UIImage imageNamed:@"default_image"]];
-        NSString *imageName = item.grade.intValue>2?@"report_class_thr":(item.grade.intValue>1?@"report_class_two":@"report_class_one");
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnail] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/default_image"]];
+    NSString *imageName = item.grade.intValue>2?@"BRSource.bundle/report_class_thr":(item.grade.intValue>1?@"BRSource.bundle/report_class_two":@"BRSource.bundle/report_class_one");
     self.levelImage.image = [UIImage imageNamed:imageName];
     if (item.grade.intValue == 0) {
         self.levelImage.hidden = YES;

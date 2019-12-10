@@ -40,7 +40,7 @@
     }];
     
     UIImageView *noDataImg =[UIImageView new];
-    noDataImg.image =[UIImage imageNamed:@"nodata"];
+    noDataImg.image =[UIImage imageNamed:@"BRSource.bundle/nodata"];
     [noDataView addSubview:noDataImg];
     
     [noDataImg mas_makeConstraints:^(MASConstraintMaker *make) {

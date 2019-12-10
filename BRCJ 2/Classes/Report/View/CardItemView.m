@@ -21,7 +21,7 @@
 
 - (UIImageView *)avatar{
     if (!_avatar) {
-        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"report_avatar_default"]];
+        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
     }
     return _avatar;
 }
@@ -63,7 +63,7 @@
 
 - (void)loadTheViewWith:(ReportPersonModel *)item{
     //heat这个字段不对
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:item.headPortrait] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:item.headPortrait] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
     self.nameLabel.text = item.name;
     self.desLabel.text = item.oneIntroduction;
 }

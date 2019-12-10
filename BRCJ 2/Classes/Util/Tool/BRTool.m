@@ -14,11 +14,6 @@
 
 @implementation BRTool
 
-////测试(1,是过审，2，是正常)
-//+ (NSInteger)test{
-//    return 2;
-//}
-
 + (id)paserDictionary:(NSDictionary*)dic forKey:(id)key
 {
     id value = [dic objectForKey:key];

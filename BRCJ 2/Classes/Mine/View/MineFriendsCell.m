@@ -56,7 +56,7 @@
 - (UIImageView *)avatarImage{
     if (!_avatarImage) {
         _avatarImage = [[UIImageView alloc] init];
-        _avatarImage.image = [UIImage imageNamed:@"report_avatar_default"];
+        _avatarImage.image = [UIImage imageNamed:@"BRSource.bundle/report_avatar_default"];
     }
     return _avatarImage;
 }
@@ -108,7 +108,7 @@
 }
 
 - (void)loadTheCellWith:(FriendsModel *)item{
-    [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:item.headPortrait] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:item.headPortrait] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
 //    self.timeLabel.text = [BRTool timeStringFromDataToNow:item.addTime]; //如果按天算的话需要更改,bug存在
     self.titleLabel.text = item.nickname;
 //    self.detailLabel.text = item.inviteCode;

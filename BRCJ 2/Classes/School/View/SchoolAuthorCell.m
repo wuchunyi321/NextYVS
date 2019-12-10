@@ -82,7 +82,7 @@
 }
 
 - (void)loadTheCellWith:(AnchorModel *)item avatar:(nonnull NSString *)avatarUrl{
-    [self.reporterAvatar sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.reporterAvatar sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
     self.reporterName.text = item.anchorName;
     self.reporterOtherInfo.text = item.anchorLabel;
 }

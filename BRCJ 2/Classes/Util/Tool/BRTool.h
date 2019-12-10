@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRTool : NSObject
 
-////测试(1,是过审，2，是正常)
-//+ (NSInteger)test;
-
 + (id)paserDictionary:(NSDictionary*)dic forKey:(id)key;
 
 + (id)paserValue:(id)value;

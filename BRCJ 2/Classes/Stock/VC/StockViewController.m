@@ -205,15 +205,15 @@
 }
 
 - (NSString *)imageName:(NSInteger)index{
-    NSString *name = @"stock_shi";
+    NSString *name = @"BRSource.bundle/stock_shi";
     if (index == 0) {
-        name = @"stock_shi";
+        name = @"BRSource.bundle/stock_shi";
     }else if (index == 1){
-        name = @"stock_bo";
+        name = @"BRSource.bundle/stock_bo";
     }else if (index == 2){
-        name = @"stock_re";
+        name = @"BRSource.bundle/stock_re";
     }else{
-        name = @"stock_chang";
+        name = @"BRSource.bundle/stock_chang";
     }
     return name;
 }

@@ -174,11 +174,11 @@
 }
 
 - (void)setNoMemberItemImages{
-    self.livingItem.iconView.image = [UIImage imageNamed:@"home_living"];
-    self.reportItem.iconView.image = [UIImage imageNamed:@"home_report"];
-    self.schoolItem.iconView.image = [UIImage imageNamed:@"home_school"];
-    self.stockItem.iconView.image = [UIImage imageNamed:@"home_stock"];
-    self.mineItem.iconView.image = [UIImage imageNamed:@"home_mine"];
+    self.livingItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_living"];
+    self.reportItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_report"];
+    self.schoolItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_school"];
+    self.stockItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_stock"];
+    self.mineItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_mine"];
     
     self.livingItem.textView.textColor = RGBCOLOR(110, 110, 100);
     self.reportItem.textView.textColor = RGBCOLOR(110, 110, 100);
@@ -187,19 +187,19 @@
     self.mineItem.textView.textColor = RGBCOLOR(110, 110, 100);
     
     if (self.currentNav == self.livingNav){
-        self.livingItem.iconView.image = [UIImage imageNamed:@"home_living_selected"];
+        self.livingItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_living_selected"];
         self.livingItem.textView.textColor = RGBCOLOR(255, 52, 58);
     }else if (self.currentNav == self.reportNav){
-        self.reportItem.iconView.image = [UIImage imageNamed:@"home_report_selected"];
+        self.reportItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_report_selected"];
         self.reportItem.textView.textColor = RGBCOLOR(255, 52, 58);
     }else if (self.currentNav == self.schoolNav){
-        self.schoolItem.iconView.image = [UIImage imageNamed:@"home_school_selected"];
+        self.schoolItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_school_selected"];
         self.schoolItem.textView.textColor = RGBCOLOR(255, 52, 58);
     }else if (self.currentNav == self.stockNav){
-        self.stockItem.iconView.image = [UIImage imageNamed:@"home_stock_selected"];
+        self.stockItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_stock_selected"];
         self.stockItem.textView.textColor = RGBCOLOR(255, 52, 58);
     }else if (self.currentNav == self.mineNav){
-        self.mineItem.iconView.image = [UIImage imageNamed:@"home_mine_selected"];
+        self.mineItem.iconView.image = [UIImage imageNamed:@"BRSource.bundle/home_mine_selected"];
         self.mineItem.textView.textColor = RGBCOLOR(255, 52, 58);
     }
 }

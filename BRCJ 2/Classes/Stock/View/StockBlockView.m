@@ -102,13 +102,13 @@
     NSString *upPercent = [array objectAtIndex:3];
     
     if (upNumber.floatValue > 0) {
-        self.bgImage.image = [UIImage imageNamed:@"stock_rise"];
+        self.bgImage.image = [UIImage imageNamed:@"BRSource.bundle/stock_rise"];
         self.contentLabel.text = [NSString stringWithFormat:@"+%5.2f +%@%%",upNumber.floatValue,upPercent];
         self.titlelabel.textColor = RGBCOLOR(255, 52, 58);
         self.contentLabel.textColor = RGBCOLOR(255, 52, 58);
         
     }else{
-        self.bgImage.image = [UIImage imageNamed:@"stock_fall"];
+        self.bgImage.image = [UIImage imageNamed:@"BRSource.bundle/stock_fall"];
         self.contentLabel.text = [NSString stringWithFormat:@"%5.2f %@%%",upNumber.floatValue,upPercent];
         self.titlelabel.textColor = RGBCOLOR(34, 147, 43);
         self.contentLabel.textColor = RGBCOLOR(34, 147, 43);

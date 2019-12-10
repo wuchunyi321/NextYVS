@@ -7,7 +7,6 @@
 //
 
 #import "LivingAdvertiseViewController.h"
-//#import "AppDelegate.h"
 #import "JWPlayer.h"
 
 #define videoUrl (@"https://black-horse-club.oss-cn-hangzhou.aliyuncs.com/xuanchuanshipin/yvs-xcsp.mp4")
@@ -33,8 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    appDelegate.allowRotation = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"com.yunvision.Rotation" object:[NSNumber numberWithBool:YES]];
     self.navigationController.navigationBarHidden = YES;
 }
 
@@ -68,7 +66,7 @@
     
     backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.backgroundColor = [UIColor clearColor];
-    [backBtn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"BRSource.bundle/nav_back"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     

@@ -86,6 +86,9 @@
         }
     }];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRotation:) name:@"com.yunvision.Rotation" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogout) name:@"com.yunvision.logout" object:nil];
+    
     [self setAppWindow];
     [self setNavigationStyle];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -117,6 +120,28 @@
     [WXApi registerApp:@"wx80163dd2d39f73b3" enableMTA:YES];
     
     return YES;
+}
+
+/**
+ 退出登录
+ */
+- (void)handleLogout{
+    [self deleteAlias];
+//    [YVS_UserContext clearNewLogin];
+//    [YVS_UserContext clearLogin];
+//    [self loginOut];
+}
+
+/**
+ 开启横竖屏切换
+ */
+- (void)handleRotation:(NSNotification *)sender{
+    NSNumber *canRotation = sender.object;
+    if (canRotation.boolValue == YES) {
+        self.allowRotation = YES;
+    }else{
+        self.allowRotation = NO;
+    }
 }
 
 - (void)deleteAlias{

@@ -73,7 +73,7 @@
     rightBtn = [[UIButton alloc] init];
     [rightBtn addTarget:self action:@selector(tapNaviRightButton) forControlEvents:UIControlEventTouchUpInside];
     rightBtn.enabled = YES;
-    [rightBtn setImage:[UIImage imageNamed:@"mine_message"] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"BRSource.bundle/mine_message"] forState:UIControlStateNormal];
     rightBtn.frame = CGRectMake(0, 0, 44, 44);
     rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 12, 0, -12);
     rightBtn.backgroundColor = [UIColor clearColor];

@@ -72,7 +72,7 @@
 
 - (UIImageView *)arrowImage{
     if (!_arrowImage) {
-        _arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"next"]]; //7*12
+        _arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/next"]]; //7*12
          _arrowImage.backgroundColor = [UIColor clearColor];
     }
     return _arrowImage;

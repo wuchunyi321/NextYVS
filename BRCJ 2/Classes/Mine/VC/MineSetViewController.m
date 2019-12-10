@@ -10,7 +10,7 @@
 
 #import "MineInfoNormalCell.h"
 
-//#import "AppDelegate+RootVC.h" //切换登录状态
+#import "AppDelegate+RootVC.h" //切换登录状态
 
 @interface MineSetViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,7 +41,7 @@
     UIView *headerView = [UIView new];
     headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210);
     headerView.backgroundColor = [UIColor whiteColor];
-    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"set_logo"]];
+    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/logo_yuanjiao"]];
     logoImage.frame = CGRectMake((SCREEN_WIDTH-84)/2, 30, 84, 84);
     logoImage.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
     logoImage.layer.shadowOffset = CGSizeZero;
@@ -49,8 +49,10 @@
     logoImage.layer.shadowRadius = 3;//阴影半径，默认3
     [headerView addSubview:logoImage];
     
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     UILabel *versionLabel = [UILabel new];
-    versionLabel.text = @"云世界1.2.0";
+    versionLabel.text = [NSString stringWithFormat:@"云世界%@",app_Version];
     versionLabel.textColor = RGBCOLOR(108, 108, 108);
     versionLabel.textAlignment = NSTextAlignmentCenter;
     versionLabel.frame = CGRectMake(0, 30+84+20, SCREEN_WIDTH, 13);
@@ -74,10 +76,10 @@
 }
 
 - (void)handleLoginOut{
-//    [UserContext clearLogin];
-//    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [delegate setLoginViewController];
-//    [delegate deleteAlias];
+    [UserContext clearLogin];
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate setLoginViewController];
+    [delegate deleteAlias];
 }
 
 /*

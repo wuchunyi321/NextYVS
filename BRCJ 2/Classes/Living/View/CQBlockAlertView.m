@@ -36,7 +36,7 @@
     }];
     
     // 上面的两头牛
-    UIImageView *logoLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"living_hubImage"]];
+    UIImageView *logoLabel = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/living_hubImage"]];
     [bgImageView addSubview:logoLabel];
     [logoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(160);
@@ -97,7 +97,7 @@
     // 取消按钮
     UIButton *cancelButton = [[UIButton alloc] init];
     [bgView addSubview:cancelButton];
-    [cancelButton setImage:[UIImage imageNamed:@"living_close"] forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageNamed:@"BRSource.bundle/living_close"] forState:UIControlStateNormal];
     // 取消按钮点击
     [cancelButton cq_addAction:^(UIButton *button) {
         [bgView removeFromSuperview];
@@ -133,8 +133,8 @@
     
     //logo
     UIButton *logoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [logoBtn setImage:[UIImage imageNamed:@"show_logo"] forState:UIControlStateNormal];
-    [logoBtn setTitle:@"云视界" forState:UIControlStateNormal];
+    [logoBtn setImage:[UIImage imageNamed:@"BRSource.bundle/show_logo"] forState:UIControlStateNormal];
+    [logoBtn setTitle:@"云世界" forState:UIControlStateNormal];
     logoBtn.titleLabel.font = [UserContext getTheFontWithName:@"PingFang-SC-Bold" size:22];
     [logoBtn setTitleColor:RGBCOLOR(216, 31, 66) forState:UIControlStateNormal];
     [bgImageView addSubview:logoBtn];
@@ -253,7 +253,7 @@
     
     //underImage1
     UIButton *signImage = [UIButton buttonWithType:UIButtonTypeCustom];
-    [signImage setImage:[UIImage imageNamed:@"pay_vx"] forState:UIControlStateNormal];
+    [signImage setImage:[UIImage imageNamed:@"BRSource.bundle/pay_vx"] forState:UIControlStateNormal];
     [bgImageView addSubview:signImage];
 
     [signImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -282,7 +282,7 @@
     
     //underImage2
     UIButton *classifyImage = [UIButton buttonWithType:UIButtonTypeCustom];
-    [classifyImage setImage:[UIImage imageNamed:@"pay_zfb"] forState:UIControlStateNormal];
+    [classifyImage setImage:[UIImage imageNamed:@"BRSource.bundle/pay_zfb"] forState:UIControlStateNormal];
     [bgImageView addSubview:classifyImage];
 
     [classifyImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -313,7 +313,7 @@
     // 取消按钮
     UIButton *cancelButton = [[UIButton alloc] init];
     [bgView addSubview:cancelButton];
-    [cancelButton setImage:[UIImage imageNamed:@"base_close"] forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageNamed:@"BRSource.bundle/base_close"] forState:UIControlStateNormal];
     // 取消按钮点击
     [cancelButton cq_addAction:^(UIButton *button) {
         [bgView removeFromSuperview];

@@ -42,7 +42,7 @@
 - (UIImageView *)arrowImage{
     if (!_arrowImage) {
         _arrowImage = [[UIImageView alloc] init];
-        _arrowImage.image = [UIImage imageNamed:@"next"]; //7*12
+        _arrowImage.image = [UIImage imageNamed:@"BRSource.bundle/next"]; //7*12
     }
     return _arrowImage;
 }
@@ -98,43 +98,43 @@
     switch (type) {
         case MineHomeTableCellTypeInvate:{
             self.underLine.hidden = NO;
-            self.iconImage.image = [UIImage imageNamed:@"mine_invite"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_invite"];
             self.titlelabel.text = @"邀请";
         }
             break;
         case MineHomeTableCellTypeAboutUs:{
             self.underLine.hidden = NO;
-            self.iconImage.image = [UIImage imageNamed:@"mine_about_us"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_about_us"];
             self.titlelabel.text = @"关于我们";
         }
             break;
         case MineHomeTableCellTypeReport:{
             self.underLine.hidden = NO;
-            self.iconImage.image = [UIImage imageNamed:@"mine_statement"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_statement"];
             self.titlelabel.text = @"免责声明";
         }
             break;
         case MineHomeTableCellTypeMyFriends:{
             self.underLine.hidden = NO;
-            self.iconImage.image = [UIImage imageNamed:@"mine_friends"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_friends"];
             self.titlelabel.text = @"我的好友";
         }
             break;
         case MineHomeTableCellTypeCallUs:{
             self.underLine.hidden = NO;
-            self.iconImage.image = [UIImage imageNamed:@"mine_call_us"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_call_us"];
             self.titlelabel.text = @"联系我们";
         }
             break;
         case MineHomeTableCellTypeSet:{
             self.underLine.hidden = YES;
-            self.iconImage.image = [UIImage imageNamed:@"mine_set"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_set"];
             self.titlelabel.text = @"设置";
         }
             break;
         case MineHomeTableCellTypePay:{
             self.underLine.hidden = YES;
-            self.iconImage.image = [UIImage imageNamed:@"mine_pay"];
+            self.iconImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_pay"];
             self.titlelabel.text = @"订单列表";
         }
             break;

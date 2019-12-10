@@ -212,11 +212,11 @@
     if (item.orderStatus.intValue == 1) { //成功
         self.titleLabel.backgroundColor = RGBCOLOR(68, 136, 249);
         self.titleLabel.textColor = RGBCOLOR(48, 123, 249);
-        self.successImage.image = [UIImage imageNamed:@"mine_Payed"];
+        self.successImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_Payed"];
     }else{ //失败
         self.titleLabel.backgroundColor = RGBCOLOR(255, 167, 0);
         self.titleLabel.textColor = RGBCOLOR(216, 141, 0);
-        self.successImage.image = [UIImage imageNamed:@"mine_notPay"];
+        self.successImage.image = [UIImage imageNamed:@"BRSource.bundle/mine_notPay"];
     }
     self.titleLabel.text = [BRTool getTheBackStrWithgradeStr:item.rechargeLevel isBackInt:NO];
     self.orderLabel.text = [NSString stringWithFormat:@"订单编号：%@",item.outTradeNo];

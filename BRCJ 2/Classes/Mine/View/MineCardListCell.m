@@ -23,7 +23,7 @@
 
 - (MineCardImageView *)card{
     if (!_card) {
-        _card = [[MineCardImageView alloc] initWithImage:[UIImage imageNamed:@"mine_card"]];
+        _card = [[MineCardImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/mine_card"]];
     }
     return _card;
 }

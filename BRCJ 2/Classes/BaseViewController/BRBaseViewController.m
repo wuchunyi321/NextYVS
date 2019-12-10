@@ -32,7 +32,7 @@
 
 #pragma mark - custom methods
 - (void)setBackButton {
-    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
 }
 
 - (void)hideBackButton {

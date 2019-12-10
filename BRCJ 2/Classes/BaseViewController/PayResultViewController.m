@@ -76,7 +76,7 @@
                [self initTheView];
             });
         }else{
-            if (self->timeCount == 4) {
+            if (self->timeCount >= 4) {
                 dispatch_source_cancel(self.gcdPayTimer);
                 self->success = NO;
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -87,7 +87,7 @@
     }
                                   failure:^(NSString *errorMessage, id responseObject) {
         NSLog(@"查询失败了");
-        if (self->timeCount == 4) {
+        if (self->timeCount >= 4) {
             dispatch_source_cancel(self.gcdPayTimer);
             self->success = NO;
             dispatch_async(dispatch_get_main_queue(), ^{

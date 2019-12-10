@@ -9,7 +9,6 @@
 #import "MineInviteViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
-
 #import <CoreImage/CoreImage.h>
 
 #define inviteBgWidth        375*mulNumber
@@ -57,43 +56,43 @@
 
 
 //生成二维码
-- (UIImage *)generateQRCodeWithString:(NSString *)string Size:(CGFloat)size{
-    //创建过滤器
-    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    //过滤器恢复默认
-    [filter setDefaults];
-    //给过滤器添加数据<字符串长度893>
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    [filter setValue:data forKey:@"inputMessage"];
-    //获取二维码过滤器生成二维码
-    CIImage *image = [filter outputImage];
-    UIImage *img = [self createNonInterpolatedUIImageFromCIImage:image WithSize:size];
-    return img;
-}
+//- (UIImage *)generateQRCodeWithString:(NSString *)string Size:(CGFloat)size{
+//    //创建过滤器
+//    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+//    //过滤器恢复默认
+//    [filter setDefaults];
+//    //给过滤器添加数据<字符串长度893>
+//    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+//    [filter setValue:data forKey:@"inputMessage"];
+//    //获取二维码过滤器生成二维码
+//    CIImage *image = [filter outputImage];
+//    UIImage *img = [self createNonInterpolatedUIImageFromCIImage:image WithSize:size];
+//    return img;
+//}
 
 //二维码清晰
-- (UIImage *)createNonInterpolatedUIImageFromCIImage:(CIImage *)image WithSize:(CGFloat)size{
-    CGRect extent = CGRectIntegral(image.extent);
-    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
-    //创建bitmap
-    size_t width = CGRectGetWidth(extent)*scale;
-    size_t height = CGRectGetHeight(extent)*scale;
-    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
-    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
-    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
-    CGContextScaleCTM(bitmapRef, scale, scale);
-    CGContextDrawImage(bitmapRef, extent, bitmapImage);
-    //保存图片
-    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
-    CGContextRelease(bitmapRef);
-    CGImageRelease(bitmapImage);
-    return [UIImage imageWithCGImage:scaledImage];
-}
+//- (UIImage *)createNonInterpolatedUIImageFromCIImage:(CIImage *)image WithSize:(CGFloat)size{
+//    CGRect extent = CGRectIntegral(image.extent);
+//    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+//    //创建bitmap
+//    size_t width = CGRectGetWidth(extent)*scale;
+//    size_t height = CGRectGetHeight(extent)*scale;
+//    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+//    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+//    CIContext *context = [CIContext contextWithOptions:nil];
+//    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
+//    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+//    CGContextScaleCTM(bitmapRef, scale, scale);
+//    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+//    //保存图片
+//    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+//    CGContextRelease(bitmapRef);
+//    CGImageRelease(bitmapImage);
+//    return [UIImage imageWithCGImage:scaledImage];
+//}
 
 - (void)initTheView{
-    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_invite_bg"]];
+    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/mine_invite_bg"]];
     [self.view addSubview:bgImage];
     
     [bgImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,7 +113,7 @@
         make.height.mas_equalTo(24);
     }];
     
-    UIImageView  *ercodeImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_ercode_bg"]];
+    UIImageView  *ercodeImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/mine_ercode_bg"]];
     [bgImage addSubview:ercodeImage];
     
     [ercodeImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -173,7 +172,7 @@
     }];
     
     UIImageView *ercode = [[UIImageView alloc] init];
-    ercode.image = [self generateQRCodeWithString:@"https://apps.apple.com/us/app/云视野/id1485189944?l=zh&ls=1" Size:250];
+    ercode.image = [UIImage imageNamed:@"BRSource.bundle/21573208056_.pic_hd.jpg"];
     [ercodeImage addSubview:ercode];
     
     [ercode mas_makeConstraints:^(MASConstraintMaker *make) {

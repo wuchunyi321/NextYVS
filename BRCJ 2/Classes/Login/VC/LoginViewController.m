@@ -132,7 +132,7 @@
         leftView.frame = CGRectMake(0, 0, 27, 43);
         
         UIImageView *image = [[UIImageView alloc] init];
-        image.image = [UIImage imageNamed:@"login_invite"];
+        image.image = [UIImage imageNamed:@"BRSource.bundle/login_invite"];
         image.frame = CGRectMake(5, (43-17)/2, 17, 17);
         [leftView addSubview:image];
         _inviteCodeTextField.leftView = leftView;
@@ -164,7 +164,7 @@
         leftView.frame = CGRectMake(0, 0, 25, 43);
         
         UIImageView *image = [[UIImageView alloc] init];
-        image.image = [UIImage imageNamed:@"login_phone"];
+        image.image = [UIImage imageNamed:@"BRSource.bundle/login_phone"];
         image.frame = CGRectMake(5, (43-17)/2, 15, 17);
         [leftView addSubview:image];
         
@@ -196,7 +196,7 @@
         leftView.frame = CGRectMake(0, 0, 23, 43);
         
         UIImageView *image = [[UIImageView alloc] init];
-        image.image = [UIImage imageNamed:@"login_code"];
+        image.image = [UIImage imageNamed:@"BRSource.bundle/login_code"];
         image.frame = CGRectMake(5, (43-15)/2, 13, 15);
         [leftView addSubview:image];
         
@@ -286,7 +286,7 @@
 
     /** 顶部+logo部分 **/
     UIImageView  *bgView = [[UIImageView alloc] init];
-    bgView.image = [UIImage imageNamed:@"login_bg"];
+    bgView.image = [UIImage imageNamed:@"BRSource.bundle/login_bg"];
     [self.view addSubview:bgView];
     
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -300,7 +300,7 @@
     logoImage.layer.shadowOpacity = 0.16;//阴影透明度，默认0
     logoImage.layer.shadowRadius = 3;//阴影半径，默认3
     [self.view addSubview:logoImage];
-    logoImage.image = [UIImage imageNamed:@"login_logo"];
+    logoImage.image = [UIImage imageNamed:@"BRSource.bundle/login_logo"];
     [logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.width.height.mas_equalTo(logoImageWidth);
@@ -312,7 +312,7 @@
     nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.font = [UIFont systemFontOfSize:24];
     nameLabel.textAlignment = NSTextAlignmentCenter;
-    nameLabel.text = @"云视界科技";
+    nameLabel.text = @"云世界";
     [self.view addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);

@@ -46,7 +46,7 @@
 
 - (UIImageView *)logoImage{
     if (!_logoImage) {
-        _logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"report_logo1"]];
+        _logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/report_logo1"]];
     }
     return _logoImage;
 }
@@ -97,7 +97,7 @@
             make.height.mas_equalTo(12);
         }];
         
-        UIImageView *lookImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pViews"]];
+        UIImageView *lookImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/pViews"]];
         [self.contentView addSubview:lookImage];
         [lookImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(16);
@@ -119,7 +119,7 @@
 
 - (void)loadTheCellWith:(ReportListModel *)item{
     // 图文混排部分
-    NSString *imageName = item.grade.intValue>2?@"report_class_thr":(item.grade.intValue>1?@"report_class_two":@"report_class_one");
+    NSString *imageName = item.grade.intValue>2?@"BRSource.bundle/report_class_thr":(item.grade.intValue>1?@"BRSource.bundle/report_class_two":@"BRSource.bundle/report_class_one");
     NSString *content = [NSString stringWithFormat:@"%@ %@",imageName,item.rrName];
     NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:content];
     [result addAttribute:NSForegroundColorAttributeName
@@ -133,10 +133,10 @@
         UIImage *image = [UIImage imageNamed:imageName];
         YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
         NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:imageView contentMode:UIViewContentModeCenter attachmentSize:CGSizeMake(30, 15) alignToFont:[UIFont systemFontOfSize:14] alignment:YYTextVerticalAlignmentCenter];
-        NSRange range = NSMakeRange(0, 16);
+        NSRange range = NSMakeRange(0, 32);
         [result replaceCharactersInRange:range withAttributedString:attachText];
     }else{
-        NSRange range = NSMakeRange(0, 16);
+        NSRange range = NSMakeRange(0, 32);
         [result replaceCharactersInRange:range withAttributedString:[[NSAttributedString alloc] initWithString:@""]];
     }
     self.titleLabel.attributedText = result;

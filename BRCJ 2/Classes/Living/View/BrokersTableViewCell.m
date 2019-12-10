@@ -123,7 +123,7 @@
 - (void)loadTheCellWith:(SecuritiesCompanyModel *)item withIndex:(NSInteger)index{
     self.titleLabel.text = item.companyName;
     self.subTitle.text = item.companyIntroduce;
-    [self.logoImage sd_setImageWithURL:[NSURL URLWithString:item.companyLogo] placeholderImage:[UIImage imageNamed:@"default_image"]];
+    [self.logoImage sd_setImageWithURL:[NSURL URLWithString:item.companyLogo] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/default_image"]];
     self.openBtn.tag = index+1;
 }
 

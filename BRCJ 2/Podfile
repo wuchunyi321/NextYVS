@@ -13,7 +13,7 @@ pod 'SDCycleScrollView', '~> 1.80'
 pod 'MJExtension', '~> 3.0.17'
 pod 'SVProgressHUD', '~> 2.2.5'
 pod 'JPush'
-pod 'AlipaySDK-iOS'
-pod 'WechatOpenSDK','1.8.2'
+#pod 'AlipaySDK-iOS'
+#pod 'WechatOpenSDK','1.8.2'
 
 end

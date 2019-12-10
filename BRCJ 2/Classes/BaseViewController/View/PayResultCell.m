@@ -60,11 +60,11 @@
 
 - (void)loadTheCellWithResult:(BOOL)result{
     if (result) { //成功
-        self.reslutImage.image = [UIImage imageNamed:@"pay_success"];
+        self.reslutImage.image = [UIImage imageNamed:@"BRSource.bundle/pay_success"];
         self.reslutLabel.textColor = RGBCOLOR(9, 186, 7);
         self.reslutLabel.text = @"支付成功";
     }else{
-        self.reslutImage.image = [UIImage imageNamed:@"pay_failed"];
+        self.reslutImage.image = [UIImage imageNamed:@"BRSource.bundle/pay_failed"];
         self.reslutLabel.textColor = RGBCOLOR(255, 41, 0);
         self.reslutLabel.text = @"支付失败";
     }

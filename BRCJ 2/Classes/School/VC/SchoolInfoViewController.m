@@ -18,6 +18,7 @@
 
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApiRequestHandler.h"
+
 #define S_BG_WIDTH            375*mulNumber
 #define S_BG_HEIGHT           327*mulNumber
 
@@ -42,7 +43,7 @@
 
 - (UIImageView *)avatar{
     if(!_avatar){
-        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"report_avatar_default"]];
+        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
         _avatar.layer.cornerRadius = 37.5;
         _avatar.layer.masksToBounds = YES;
     }
@@ -184,7 +185,7 @@
 }
 
 - (void)initTheView{
-    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"school_bg"]];
+    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/school_bg"]];
     bgImage.userInteractionEnabled = YES;
     [self.view addSubview:bgImage];
     
@@ -196,7 +197,7 @@
     
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.backgroundColor = [UIColor clearColor];
-    [backBtn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"BRSource.bundle/nav_back"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [bgImage addSubview:backBtn];
     
@@ -276,7 +277,7 @@
         [weakSelf loadMoreData];
     }];
     
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:self.anchorItem.headPortrait] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:self.anchorItem.headPortrait] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
 }
 
 - (void)loadNewData{

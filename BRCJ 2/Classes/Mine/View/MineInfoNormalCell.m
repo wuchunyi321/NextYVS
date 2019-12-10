@@ -47,7 +47,7 @@
 - (UIImageView *)avatarImage{
     if (!_avatarImage) {
         _avatarImage = [[UIImageView alloc] init];
-        _avatarImage.image = [UIImage imageNamed:@"report_avatar_default"]; //7*12
+        _avatarImage.image = [UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]; //7*12
     }
     return _avatarImage;
 }
@@ -55,7 +55,7 @@
 - (UIImageView *)arrowImage{
     if (!_arrowImage) {
         _arrowImage = [[UIImageView alloc] init];
-        _arrowImage.image = [UIImage imageNamed:@"next"]; //7*12
+        _arrowImage.image = [UIImage imageNamed:@"BRSource.bundle/next"]; //7*12
     }
     return _arrowImage;
 }
@@ -123,7 +123,7 @@
             self.valueLabel.hidden = YES;
             self.titlelabel.text = @"头像";
             if (value && value.length > 0) {
-                [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:value] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+                [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:value] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
             }
         }
             break;

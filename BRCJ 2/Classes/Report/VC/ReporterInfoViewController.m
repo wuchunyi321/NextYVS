@@ -41,7 +41,7 @@
 
 - (UIImageView *)avatar{
     if(!_avatar){
-        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"report_avatar_default"]];
+        _avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
         _avatar.layer.borderWidth = 0.5;
         _avatar.layer.borderColor = UIColorFromRGB(0xf0f0f0).CGColor;
         _avatar.layer.cornerRadius = 37.5;
@@ -166,7 +166,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     pageIndex = 1;
-    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"report_bg"]];
+    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/report_bg"]];
     bgImage.userInteractionEnabled = YES;
     [self.view addSubview:bgImage];
     
@@ -179,7 +179,7 @@
      */
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.backgroundColor = [UIColor clearColor];
-    [backBtn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"BRSource.bundle/nav_back"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [bgImage addSubview:backBtn];
     
@@ -258,7 +258,7 @@
         [weakSelf loadMoreData];
     }];
     
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:self.mdoel.headPortrait] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:self.mdoel.headPortrait] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
 }
 
 - (void)loadNewData{

@@ -51,7 +51,7 @@
 
 - (MineCardImageView *)cardImage{
     if (!_cardImage) {
-        _cardImage = [[MineCardImageView alloc] initWithImage:[UIImage imageNamed:@"mine_card"]];
+        _cardImage = [[MineCardImageView alloc] initWithImage:[UIImage imageNamed:@"BRSource.bundle/mine_card"]];
         _cardImage.delegate = self;
     }
     return _cardImage;

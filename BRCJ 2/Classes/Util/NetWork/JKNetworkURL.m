@@ -2,8 +2,8 @@
 
 NSString const*LogOutNotification = @"LogOutNotification";
 // test main url
-NSString * const BRBaseURL  = @"https://v1.yunvision.com.cn/one/api/";
-//NSString * const BRBaseURL  = @"https://cloud.yunvision.com.cn/one/api/";
+//NSString * const BRBaseURL  = @"https://v1.yunvision.com.cn/one/api/";
+NSString * const BRBaseURL  = @"https://cloud.yunvision.com.cn/one/api/";
 NSString * const BRRongCloudKey = @"vnroth0kv49wo";
 NSString * const BRRongStock_sha = @"https://hq.sinajs.cn/list=s_sh000001";
 NSString * const BRRongStock_chu = @"https://hq.sinajs.cn/list=s_sz399006";

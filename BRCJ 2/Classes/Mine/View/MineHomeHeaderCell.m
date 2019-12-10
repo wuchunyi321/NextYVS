@@ -75,12 +75,12 @@
 
 - (void)loadTheCellWithTitle:(NSString *)title andAvatar:(NSString *)avatar{
     MyMember *menber = [MyMember readFromFile];
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"report_avatar_default"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:avatar] placeholderImage:[UIImage imageNamed:@"BRSource.bundle/report_avatar_default"]];
     self.titleLabel.text = title;
     self.levelImage.hidden = NO;
     if (menber.vipLevel.intValue > 0) {
         CGSize labelSize = [self.titleLabel sizeThatFits:CGSizeZero];
-        self.levelImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"ic_userlevel_%@",menber.vipLevel]];
+        self.levelImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"BRSource.bundle/ic_userlevel_%@",menber.vipLevel]];
         [self.levelImage mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.titleLabel.mas_left).offset(labelSize.width+10);
         }];

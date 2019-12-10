@@ -61,7 +61,7 @@ SDCycleScrollViewDelegate>{
 - (SDCycleScrollView *)bannerView{
     if (!_bannerView) {
         
-        _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(13, TopHeight+10, [UIScreen mainScreen].bounds.size.width-26, 121) delegate:self placeholderImage:[UIImage imageNamed:@"banner_default"]];
+        _bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(13, TopHeight+10, [UIScreen mainScreen].bounds.size.width-26, 121) delegate:self placeholderImage:[UIImage imageNamed:@"BRSource.bundle/banner_default"]];
         _bannerView.layer.cornerRadius = 15;
         _bannerView.layer.masksToBounds = YES;
         
