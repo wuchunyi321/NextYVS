@@ -21,10 +21,11 @@
 @implementation TransferDataTool
 
 //userInfo
-+ (void)writeUserInfo:(UserInfoModel *)item{
++ (void)writeUserInfo:(id )item{
+    UserInfoModel *model = [JKModelConvert dataModelWithClass:[UserInfoModel class] andSource:(NSDictionary *)item];
     NSError *error;
     //会调用对象的encodeWithCoder方法
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:item
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model
                                          requiringSecureCoding:YES
                                                          error:&error];
     [data writeToFile:[JKDirectoryManager loginInfoFilePath] atomically:YES];
@@ -33,10 +34,11 @@
     [UserInfoModel removeFile];
 }
 //member
-+ (void)writeMember:(MyMember *)item{
++ (void)writeMember:(id )item{
+    MyMember *model = [JKModelConvert dataModelWithClass:[MyMember class] andSource:(NSDictionary *)item];
     NSError *error;
     //会调用对象的encodeWithCoder方法
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:item
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model
                                          requiringSecureCoding:YES
                                                          error:&error];
     NSLog(@"the error == %@",error);
@@ -46,10 +48,11 @@
     [MyMember removeFile];
 }
 //acount
-+ (void)writeAcount:(AcountModel *)item{
++ (void)writeAcount:(id )item{
+    AcountModel *model =[JKModelConvert dataModelWithClass:[AcountModel class] andSource:(NSDictionary *)item];
     NSError *error;
     //会调用对象的encodeWithCoder方法
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:item
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model
                                          requiringSecureCoding:YES
                                                          error:&error];
     NSLog(@"the error == %@",error);

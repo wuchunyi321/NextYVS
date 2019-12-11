@@ -1314,7 +1314,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Classes/WechatSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1352,7 +1352,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Classes/WechatSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

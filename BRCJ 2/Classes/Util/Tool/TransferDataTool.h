@@ -17,13 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TransferDataTool : NSObject
 
 //userInfo
-+ (void)writeUserInfo:(UserInfoModel *)item;
++ (void)writeUserInfo:(id )item;
 + (void)removeUserInfo;
 //member
-+ (void)writeMember:(MyMember *)item;
++ (void)writeMember:(id )item;
 + (void)removeMember;
 //acount
-+ (void)writeAcount:(AcountModel *)item;
++ (void)writeAcount:(id )item;
 + (void)removeAcount;
 //token
 + (void)writeToken:(NSString *)token;
