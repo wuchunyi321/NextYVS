@@ -20,5 +20,6 @@
 #import "SVProgressHUD.h"
 #import "UIImageView+WebCache.h"
 #import "JKModelConvert.h"
+#import "TransferDataTool.h"
 
 #endif /* BrHeader_h */

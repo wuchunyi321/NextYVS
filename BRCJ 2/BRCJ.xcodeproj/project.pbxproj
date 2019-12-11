@@ -662,12 +662,12 @@
 			isa = PBXGroup;
 			children = (
 				8433A63F239756BE00E47BDD /* JWFullViewController.h */,
-				8433A640239756BE00E47BDD /* YYWeakProxy.m */,
-				8433A641239756BE00E47BDD /* JWPlayer.h */,
-				8433A642239756BE00E47BDD /* UIDevice+JWDevice.h */,
-				8433A643239756BE00E47BDD /* YYWeakProxy.h */,
 				8433A644239756BE00E47BDD /* JWFullViewController.m */,
+				8433A643239756BE00E47BDD /* YYWeakProxy.h */,
+				8433A640239756BE00E47BDD /* YYWeakProxy.m */,
+				8433A642239756BE00E47BDD /* UIDevice+JWDevice.h */,
 				8433A645239756BE00E47BDD /* UIDevice+JWDevice.m */,
+				8433A641239756BE00E47BDD /* JWPlayer.h */,
 				8433A646239756BE00E47BDD /* JWPlayer.m */,
 			);
 			path = JWPlayer;
@@ -677,9 +677,9 @@
 			isa = PBXGroup;
 			children = (
 				8433A648239756BE00E47BDD /* WXApiManager.h */,
-				8433A649239756BE00E47BDD /* WXApiRequestHandler.m */,
-				8433A64A239756BE00E47BDD /* WXApiRequestHandler.h */,
 				8433A64B239756BE00E47BDD /* WXApiManager.m */,
+				8433A64A239756BE00E47BDD /* WXApiRequestHandler.h */,
+				8433A649239756BE00E47BDD /* WXApiRequestHandler.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -687,22 +687,22 @@
 		8433A64C239756BE00E47BDD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				8433A64D239756BE00E47BDD /* Reachability.m */,
-				8433A64E239756BE00E47BDD /* JKDirectoryManager.m */,
-				8433A64F239756BE00E47BDD /* UserContext.m */,
-				8433A650239756BE00E47BDD /* BRTool.m */,
-				8433A651239756BE00E47BDD /* TransferDataTool.m */,
-				8433A652239756BE00E47BDD /* UIImage+GradientColor.m */,
-				8433A653239756BE00E47BDD /* AFHTTPSessionManager+AddMethod.m */,
-				8433A654239756BE00E47BDD /* NSString+Security.m */,
-				8433A655239756BE00E47BDD /* UserContext.h */,
 				8433A656239756BE00E47BDD /* Reachability.h */,
+				8433A64D239756BE00E47BDD /* Reachability.m */,
 				8433A657239756BE00E47BDD /* JKDirectoryManager.h */,
+				8433A64E239756BE00E47BDD /* JKDirectoryManager.m */,
+				8433A655239756BE00E47BDD /* UserContext.h */,
+				8433A64F239756BE00E47BDD /* UserContext.m */,
 				8433A658239756BE00E47BDD /* BRTool.h */,
+				8433A650239756BE00E47BDD /* BRTool.m */,
 				8433A659239756BE00E47BDD /* TransferDataTool.h */,
-				8433A65A239756BE00E47BDD /* NSString+Security.h */,
-				8433A65B239756BE00E47BDD /* AFHTTPSessionManager+AddMethod.h */,
+				8433A651239756BE00E47BDD /* TransferDataTool.m */,
 				8433A65C239756BE00E47BDD /* UIImage+GradientColor.h */,
+				8433A652239756BE00E47BDD /* UIImage+GradientColor.m */,
+				8433A65B239756BE00E47BDD /* AFHTTPSessionManager+AddMethod.h */,
+				8433A653239756BE00E47BDD /* AFHTTPSessionManager+AddMethod.m */,
+				8433A65A239756BE00E47BDD /* NSString+Security.h */,
+				8433A654239756BE00E47BDD /* NSString+Security.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1314,7 +1314,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Classes/WechatSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1352,7 +1352,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Classes/WechatSDK1.8.2",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunvision.BRCJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

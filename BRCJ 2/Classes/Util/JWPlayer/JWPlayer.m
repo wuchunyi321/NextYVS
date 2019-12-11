@@ -44,6 +44,7 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
 }
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
@@ -124,6 +125,10 @@
     _playerItem = [notification object];
     [_playerItem seekToTime:kCMTimeZero];
     [self pause];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(playFinished)]) {
+        [_delegate performSelector:@selector(playFinished) withObject:nil];
+    }
 }
 
 #pragma mark - KVO - status

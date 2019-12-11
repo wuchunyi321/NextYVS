@@ -10,8 +10,6 @@
 #import "ViewController.h"
 #import "AppDelegate+RootVC.h"
 
-#import "WXApiManager.h"
-
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
 // iOS10 注册 APNs 所需头文件
@@ -24,10 +22,10 @@
 #define jPushAppKey (@"90b638cb3b59d2c76cef1ddb")
 
 #import "UserInfoModel.h"
-
-#import <AlipaySDK/AlipaySDK.h>
-
 #import "PayResultViewController.h"
+
+
+#import "TransferDataTool.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate>
 
@@ -112,14 +110,22 @@
     }
     [self.window makeKeyAndVisible];
     
-    [WXApi startLogByLevel:WXLogLevelNormal logBlock:^(NSString *log) {
-        NSLog(@"log : %@", log);
-    }];
-    
-    //向微信注册,发起支付必须注册
-    [WXApi registerApp:@"wx80163dd2d39f73b3" enableMTA:YES];
-    
+    [TransferDataTool registWX];
     return YES;
+}
+
+
+//退出登录
+-(void)loginOut{
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    if ([UserContext getTheTime].intValue == 1) {
+//        YVSNoLoginViewController *noLogin = [YVSNoLoginViewController new];
+//        self.window.rootViewController = noLogin;
+//    }else{
+//        PHNavigationController  *nav = [[PHNavigationController alloc] initWithRootViewController:[[YVS_LoginViewController alloc] init]];
+//        self.window.rootViewController = nav;
+//    }
+    [self.window makeKeyAndVisible];
 }
 
 /**
@@ -127,9 +133,9 @@
  */
 - (void)handleLogout{
     [self deleteAlias];
-//    [YVS_UserContext clearNewLogin];
-//    [YVS_UserContext clearLogin];
-//    [self loginOut];
+//    [UserContext clearNewLogin];
+    [UserContext clearLogin];
+    [self loginOut];
 }
 
 /**
@@ -263,41 +269,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         payVC.hidesBottomBarWhenPushed = YES;
         [((UITabBarController *)rootVC).selectedViewController pushViewController:payVC animated:YES];
     }
-    
-//    [JKRequest requestPaySearchOutTradeNo:[UserContext getOrderNumber]
-//                                  success:^(id responseObject) {
-//
-//    }
-//                                  failure:^(NSString *errorMessage, id responseObject) {
-//
-//    }];
-    
-//    if ([url.host isEqualToString:@"safepay"]) { //支付宝
-//        // 支付跳转支付宝钱包进行支付，处理支付结果
-//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-//            NSLog(@"result = %@",resultDic);
-//        }];
-//
-//        // 授权跳转支付宝钱包进行支付，处理支付结果
-//        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-//            NSLog(@"result = %@",resultDic);
-//            // 解析 auth code
-//            NSString *result = resultDic[@"result"];
-//            NSString *authCode = nil;
-//            if (result.length>0) {
-//                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
-//                for (NSString *subResult in resultArr) {
-//                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
-//                        authCode = [subResult substringFromIndex:10];
-//                        break;
-//                    }
-//                }
-//            }
-//            NSLog(@"授权结果 authCode = %@", authCode?:@"");
-//        }];
-//    }else if([url.absoluteString hasPrefix:@"wx"]){ //微信
-//    }
-    
     return YES;
 }
 

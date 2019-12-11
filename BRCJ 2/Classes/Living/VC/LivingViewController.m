@@ -230,6 +230,7 @@ SDCycleScrollViewDelegate>{
         LivingAdvertiseViewController  *infoVC = [[LivingAdvertiseViewController alloc] init];
         infoVC.title = @"宣传动画";
         infoVC.hidesBottomBarWhenPushed = YES;
+        infoVC.vipType = indexPath.row+1;
         [self.navigationController pushViewController:infoVC animated:YES];
     }
 }

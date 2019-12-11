@@ -9,6 +9,11 @@
 #import "LivingAdvertiseViewController.h"
 #import "JWPlayer.h"
 
+#import "CQBlockAlertView.h"
+//#import <AlipaySDK/AlipaySDK.h>
+//#import "WXApiRequestHandler.h"
+//#import "WXApi.h"
+
 #define videoUrl (@"https://black-horse-club.oss-cn-hangzhou.aliyuncs.com/xuanchuanshipin/yvs-xcsp.mp4")
 
 @interface LivingAdvertiseViewController ()<JWPlayerDelegate>
@@ -74,6 +79,65 @@
         make.top.equalTo(self.view).offset(TopStatus);
         make.left.equalTo(self.view).offset(5);
         make.height.width.mas_equalTo(44);
+    }];
+}
+
+
+//- (void)doAPPayWithPrice:(NSString *)price{
+//    NSString *appScheme = @"BRCJ";
+//    [[AlipaySDK defaultService] payOrder:price fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+//        NSLog(@"reslut = %@",resultDic);
+//    }];
+//}
+
+/**
+ 播放完成
+ */
+- (void)playFinished{
+    MyMember *member = [MyMember readFromFile];
+    UserInfoModel *user = [UserInfoModel readFromFile];
+    __weak typeof(self) weakSelf = self;
+    [CQBlockAlertView alertShowWithType:weakSelf.vipType
+                            VXBackBlock:^{ //微信支付
+        if ([TransferDataTool isWXAppInstalled]) {
+            [JKRequest requestPayWithVXRechargeLevel:[BRTool getTheGradeStrWith:weakSelf.vipType]
+                                            userId:member.userId
+                                             grade:member.vipLevel
+                                            mobile:user.mobile
+                                           success:^(id responseObject) {
+                NSDictionary *data = responseObject[@"data"];
+                NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                [UserContext setOrderNumber:orderNumber];
+//                [WXApiRequestHandler jumpToBizPayWithStr:data];
+                [TransferDataTool wxPayWith:data];
+            }
+                                           failure:^(NSString *errorMessage, id responseObject) {
+                NSLog(@"订单信息获取失败");
+            }];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"请先安装微信"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+                           ZFBBackBlock:^{ //支付宝支付
+                [JKRequest requestPayWithRechargeLevel:[BRTool getTheGradeStrWith:weakSelf.vipType]
+                                                userId:member.userId
+                                                 grade:member.vipLevel
+                                                mobile:user.mobile
+                                               success:^(id responseObject) {
+                    NSString *data = responseObject[@"data"];
+                    NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
+                    [UserContext setOrderNumber:orderNumber];
+//                   [weakSelf doAPPayWithPrice:data];
+                    [TransferDataTool zfbPayWith:data];
+                }
+                                               failure:^(NSString *errorMessage, id responseObject) {
+                    NSLog(@"订单信息获取失败");
+                }];
     }];
 }
 

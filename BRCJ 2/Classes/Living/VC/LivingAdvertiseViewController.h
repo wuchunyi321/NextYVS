@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LivingAdvertiseViewController : BRBaseViewController
 
+@property (nonatomic,assign)NSInteger vipType;
+
 @end
+
 
 NS_ASSUME_NONNULL_END

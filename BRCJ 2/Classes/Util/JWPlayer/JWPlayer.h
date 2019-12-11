@@ -15,7 +15,7 @@
 
 @optional
 -(void)playerTransfer:(JWPlayer *)player withIsLandscape:(NSNumber *)landscape;
-
+- (void)playFinished;
 @end
 
 @interface JWPlayer : UIView

@@ -12,17 +12,11 @@
 #import "SchoolItemInfoViewController.h"
 
 #import "CQBlockAlertView.h"
-#import "PayModel.h"
-
-#import <AlipaySDK/AlipaySDK.h>
-#import "WXApiRequestHandler.h"
 
 #import "SchoolCell.h"
 #import "SchoolListItem.h"
 
 #import "JKNoneDataView.h"
-
-
 
 @interface SchoolDetailViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSInteger schollListType;
@@ -145,13 +139,6 @@
     return cell;
 }
 
-- (void)doAPPayWithPrice:(NSString *)price{
-    NSString *appScheme = @"BRCJ";
-    [[AlipaySDK defaultService] payOrder:price fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-        NSLog(@"reslut = %@",resultDic);
-    }];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SchoolListItem *item = [self.dataArray objectAtIndex:indexPath.row];
     MyMember *member = [MyMember readFromFile];
@@ -160,6 +147,7 @@
         
         [CQBlockAlertView alertShowWithType:item.grade.integerValue
                                 VXBackBlock:^{ //微信支付
+            if ([TransferDataTool isWXAppInstalled]) {
                     [JKRequest requestPayWithVXRechargeLevel:[BRTool getTheGradeStrWith:item.grade.intValue]
                                                     userId:member.userId
                                                      grade:member.vipLevel
@@ -168,11 +156,20 @@
                         NSDictionary *data = responseObject[@"data"];
                         NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
                         [UserContext setOrderNumber:orderNumber];
-                        [WXApiRequestHandler jumpToBizPayWithStr:data];
+                        [TransferDataTool wxPayWith:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {
                         NSLog(@"订单信息获取失败");
                     }];
+            }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"请先安装微信"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            }
+            
         }
                                ZFBBackBlock:^{ //支付宝支付
                     [JKRequest requestPayWithRechargeLevel:[BRTool getTheGradeStrWith:item.grade.intValue]
@@ -183,7 +180,7 @@
                         NSString *data = responseObject[@"data"];
                         NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
                         [UserContext setOrderNumber:orderNumber];
-                       [self doAPPayWithPrice:data];
+                        [TransferDataTool zfbPayWith:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {
                         NSLog(@"订单信息获取失败");

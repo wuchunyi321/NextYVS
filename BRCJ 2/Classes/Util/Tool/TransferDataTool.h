@@ -27,8 +27,26 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)removeAcount;
 //token
 + (void)writeToken:(NSString *)token;
-
+/**
+ 清空登录信息
+ */
 + (void)clearLoginInfo;
+/**
+ 是否安装微信
+ */
++ (BOOL)isWXAppInstalled;
+/**
+ 微信注册
+ */
++ (void)registWX;
+/**
+ 支付宝跳转
+ */
++ (void)zfbPayWith:(NSString *)payInfo;
+/**
+ 微信跳转
+ */
++ (void)wxPayWith:(NSDictionary *)payInfo;
 
 @end
 
