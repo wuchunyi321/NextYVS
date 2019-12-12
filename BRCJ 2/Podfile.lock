@@ -26,6 +26,7 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - SVProgressHUD (2.2.5)
+  - WechatOpenSDK (1.8.5)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.80)
   - SDWebImage (~> 5.0.0)
   - SVProgressHUD (~> 2.2.5)
+  - WechatOpenSDK (= 1.8.5)
   - YYImage
   - YYText
 
@@ -54,6 +56,7 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
+    - WechatOpenSDK
     - YYImage
     - YYText
 
@@ -67,9 +70,10 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  WechatOpenSDK: 9b15110aba1d502456d8e83677357e6437f2e751
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 340ad1121458e792a0cac3dee3e26c9ff556a327
+PODFILE CHECKSUM: 5321c88e784e39889ebd9f9be5686e3b0ae5a243
 
 COCOAPODS: 1.8.4
