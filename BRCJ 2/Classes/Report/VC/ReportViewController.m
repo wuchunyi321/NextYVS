@@ -18,11 +18,7 @@
 #import "ReportListModel.h"
 
 #import "CQBlockAlertView.h"
-#import "PayModel.h"
 
-//#import <AlipaySDK/AlipaySDK.h>
-//#import "WXApiRequestHandler.h"
-//#import "WXApi.h"
 
 @interface ReportViewController ()<UITableViewDelegate,UITableViewDataSource,CardItemViewDelegate>{
     ReportHeadView  *headerView;
@@ -210,12 +206,6 @@
     return cell;
 }
 
-//- (void)doAPPayWithPrice:(NSString *)price{
-//    NSString *appScheme = @"BRCJ";
-//    [[AlipaySDK defaultService] payOrder:price fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//        NSLog(@"reslut = %@",resultDic);
-//    }];
-//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ReportListModel *item = [self.dataArray objectAtIndex:indexPath.row];
@@ -235,7 +225,6 @@
                         NSDictionary *data = responseObject[@"data"];
                         NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
                         [UserContext setOrderNumber:orderNumber];
-//                        [WXApiRequestHandler jumpToBizPayWithStr:data];
                         [TransferDataTool wxPayWith:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {
@@ -259,7 +248,6 @@
                         NSString *data = responseObject[@"data"];
                         NSString *orderNumber = responseObject[@"order"][@"outTradeNo"];
                         [UserContext setOrderNumber:orderNumber];
-//                       [self doAPPayWithPrice:data];
                         [TransferDataTool zfbPayWith:data];
                     }
                                                    failure:^(NSString *errorMessage, id responseObject) {

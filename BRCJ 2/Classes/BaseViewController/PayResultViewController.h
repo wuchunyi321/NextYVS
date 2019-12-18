@@ -10,7 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+判断外边还是里面
+*/
+
+
 @interface PayResultViewController : BRBaseViewController
+
+/**
+ yes 是外边，no是里面
+ */
+@property (nonatomic,assign)BOOL isOut;
 
 @end
 

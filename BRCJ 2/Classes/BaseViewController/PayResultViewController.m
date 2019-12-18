@@ -103,18 +103,23 @@
     timeCount = 1;
     success = NO;
     
-    JK_HUD_SHOW;
-    __weak typeof(self) weakSelf = self;
-    //创建GCD定时器
-    _gcdPayTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-        //设置定时器
-    dispatch_source_set_timer(_gcdPayTimer, dispatch_walltime(NULL, 0), 1 * NSEC_PER_SEC, 0);
-        //设置定时器任务
-    dispatch_source_set_event_handler(_gcdPayTimer, ^{
-        [weakSelf initTheData];
-    });
-        // 启动任务，GCD计时器创建后需要手动启动
-    dispatch_resume(_gcdPayTimer);
+    if (self.isOut) {
+        JK_HUD_SHOW;
+        sleep(3);
+    }else{
+        JK_HUD_SHOW;
+        __weak typeof(self) weakSelf = self;
+        //创建GCD定时器
+        _gcdPayTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+            //设置定时器
+        dispatch_source_set_timer(_gcdPayTimer, dispatch_walltime(NULL, 0), 1 * NSEC_PER_SEC, 0);
+            //设置定时器任务
+        dispatch_source_set_event_handler(_gcdPayTimer, ^{
+            [weakSelf initTheData];
+        });
+            // 启动任务，GCD计时器创建后需要手动启动
+        dispatch_resume(_gcdPayTimer);
+    }
 }
 
 /*
@@ -128,6 +133,9 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (self.isOut) {
+        return 1;
+    }
     return 2;
 }
 
